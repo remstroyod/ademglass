@@ -1,0 +1,23 @@
+.archive
+    &__link
+        font-weight 600
+        color #393939
+        display inline-block
+
+        span
+
+            &::after
+                content ''
+                display inline-block
+                width 28px
+                height 9px
+                background url("images/archive-link-arrow.png") center center no-repeat
+                position relative
+                margin 0 0 0 10px
+                top 1px
+                vendor(transition, transform .3s ease)
+
+                ^[-2]:hover span
+
+                    &::after
+                        vendor(transform, translateX(5px))

@@ -1,0 +1,30 @@
+{
+  "name": "adem-glass",
+  "version": "1.0.0",
+  "description": "AdemGlass",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "watch": "gulp"
+  },
+  "author": "Alex Cherniy",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/anna-shvecova/adem-glass/v2.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/anna-shvecova/adem-glass/v2/issues"
+  },
+  "homepage": "https://gitlab.com/anna-shvecova/adem-glass/v2#readme"
+}

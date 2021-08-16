@@ -1,0 +1,82 @@
+.text
+
+    &__style
+        font-size 14px
+        line-height 22px
+        font-weight 500
+        color #a6a6a6
+
+        img
+            display block
+            max-width 100%
+            height auto
+
+        p
+            margin 0
+            padding 0 0 20px 0
+
+        ul
+            margin 0 0 25px 0
+
+            > li
+                position relative
+                padding 0 0 0 25px
+                margin 0 0 8px 0
+
+                &:last-child
+                    margin 0
+
+                &::before
+                    before-or-after-absolute()
+                    width 6px
+                    height @width
+                    vendor(border-radius, 50%)
+                    background-color background-brown
+                    left 0
+                    top 9px
+
+
+        .wp
+
+            &-block
+
+                &-gallery
+
+                    ul > li
+
+                        padding 0
+
+                        &::before
+                            display none
+
+
+        @media screen and (max-width: media-xs)
+            text-align center
+
+            img
+                float none !important
+                margin 30px auto 30px auto !important
+
+            ul
+                text-align center
+
+                > li
+                    padding 15px 0 0 0
+                    margin 0 0 15px 0
+
+                    &:last-child
+                        margin 0
+
+                    &::before
+                        top 0
+                        left 50%
+                        margin-left -3px
+
+
+
+.blocks-gallery-grid,
+.wp-block-gallery {
+    align-items flex-start
+}
+
+

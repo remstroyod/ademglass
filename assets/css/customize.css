@@ -1,0 +1,108 @@
+.wpcf7 .screen-reader-response,
+.wpcf7 .wpcf7-response-output{
+    display: none !important;
+}
+.wpcf7-not-valid-tip {
+    color: #ff4343;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-size: 11px;
+    line-height: 13px;
+}
+.wpcf7-not-valid {
+    border-color: #ff4343;
+}
+
+@-webkit-keyframes opacity-ellipsis {
+    0% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+    100% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes opacity-ellipsis {
+    0% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+    100% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+    }
+}
+
+@keyframes opacity-ellipsis {
+    0% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+    }
+    100% {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+    }
+}
+.btn__loading i {
+    -webkit-animation-name: opacity-ellipsis;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: opacity-ellipsis;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-name: opacity-ellipsis;
+    -ms-animation-duration: 1s;
+    -ms-animation-iteration-count: infinite;
+}
+.btn__loading i:nth-child(2) {
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+}
+.btn__loading i:nth-child(3) {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+
+/** **/
+.fancybox-thanks {
+    max-width: 800px;
+}
+.popup {
+    border-radius: 5px;
+}
+.popup__header,
+.popup__content,
+.popup__footer{
+    text-align: center;
+    padding: 30px 40px;
+}
+.popup__content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.popup__content p {
+    font-size: 16px;
+}
+.popup__title {
+    margin: 0;
+}
+.popup__header p {
+    padding: 12px 0 0 0;
+    font-size: 14px;
+    opacity: .7;
+}
+/** **/
+.br_unselect_all,
+.berocket_aapf_widget_selected_filter span{
+    display: none !important;
+}
+.berocket_aapf_widget_selected_filter {
+    display: inline-block;
+}
+
+.hide_products {
+    opacity: .5;
+}

@@ -1,0 +1,277 @@
+.decisions
+    display block
+
+    .row
+        flexs()
+        -webkit-flex-wrap wrap
+        -ms-flex-wrap wrap
+        flex-wrap wrap
+
+        [class*='col-']
+            margin-bottom 30px
+
+    &__cell
+        display block
+        background-color #000
+        position relative
+        height 100%
+        overflow hidden
+        border-radius $border-radius-element
+
+        img
+            imagecover()
+            position relative
+            z-index 1
+            opacity .7
+            vendor(transition, all 1.75s ease-in-out)
+            will-change transform
+            height 100%
+            width 100%
+
+            ^[-1]:hover img
+                vendor(transform, scale(1.25))
+                opacity .35
+
+        p
+            display inline-block
+            position absolute
+            top 70%
+            color #fff
+            font-size 18px
+            line-height: 28px;
+            font-weight 700
+            z-index 3
+            left 25px
+            right @left
+
+            &::after
+                before-or-after-absolute('\f103')
+                font-family FontAwesome
+                width 25px
+                height @width
+                vendor(border-radius, 50%)
+                color #000
+                text-align center
+                line-height @width * 1.1
+                font-size 14px
+                background-color background-brown
+                display inline-block
+                margin 0 0 0 8px
+                position relative
+                top 0px
+
+    &__title
+        border 2px solid rgba(64, 64, 64, .3)
+        flexs(center-vertical)
+        background-color #fff
+        border-radius $border-radius-element
+
+        &-title
+            margin 0
+            position relative
+
+            &::after
+                before-or-after-absolute()
+                width 75px
+                height 13px
+                background url("images/arrow-long.png") center center no-repeat
+                right -50px
+                bottom 15px
+
+
+        &-inner
+            padding 0 60px
+
+            span
+                display block
+                text-transform uppercase
+                font-weight 600
+                letter-spacing .4em
+                font-size 10px
+                line-height @font-size
+                color #a0a0a0
+                margin 0 0 30px 0
+
+                &:before
+                    content ''
+                    display inline-block
+                    width 20px
+                    height 4px
+                    background-color background-brown
+                    position relative
+                    top -2px
+                    margin 0 12px 0 0
+
+
+    &__modal {
+        width 1024px
+        background-color #fff
+        border-radius 0px
+        padding 0px
+        position relative
+        @media screen and (max-width: media-sm) {
+            width 100%
+        }
+
+        .fancybox-button {
+            position absolute
+            top 10px
+            right 10px
+            padding 0
+        }
+
+        &-row {
+            flexs()
+            @media screen and (max-width: media-sm) {
+                flex-flow column wrap
+            }
+
+            &--left, &--right {
+                flexs()
+                position relative
+                padding 40px
+                flex-flow column nowrap
+                @media screen and (max-width: media-sm) {
+                    width 100%
+                }
+            }
+
+            &--left {
+                width 35%
+                background-color #393939
+
+                .title {
+                    color #fff
+                }
+            }
+
+            &--right {
+                width 65%
+
+                .title {
+                    position relative
+                    margin 0 0 20px 0
+                    padding 0 0 28px 0
+
+
+                    &::after {
+                        before-or-after-absolute();
+                        left -40px
+                        right @left
+                        height 1px
+                        background-color background-grey
+                        bottom 0
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        .title {
+            display block
+            margin 0 0 30px 0
+        }
+
+        .image {
+            margin 0 0 30px 0
+        }
+
+        .text {
+            margin 0 0 30px 0
+            color #c5c5c5
+        }
+
+        .subtitle {
+            font-size 16px
+            margin 0 0 20px 0
+        }
+
+        .list {
+            flexs()
+            flex-flow wrap
+            margin 0 0 30px 0
+            padding 0
+
+            > li {
+                margin 0 4px 4px 0
+                a {
+                    display block
+                    border-radius 2px
+                    border 2px solid background-brown
+                    font-weight 500
+                    font-size 14px
+                    line-height 26px
+                    color #959595
+                    white-space nowrap
+                    padding 0 15px
+                    border-radius 5px
+
+                    &:hover {
+                        color #fff
+                        background-color background-brown
+                    }
+
+                }
+            }
+        }
+
+    }
+
+
+    @media screen and (max-width: media-large)
+
+        &__title
+
+            &-title
+
+                &::after
+                    bottom 9px
+                    right -35px
+
+        &__cell
+
+            p
+                font-size 15px
+                line-height @font-size * 1.25
+
+    @media screen and (max-width: media-md)
+
+        &__title
+
+            &-inner
+                padding 0 30px
+
+        &__cell
+
+            p
+                top 60%
+                left 15px
+                right @left
+
+    @media screen and (max-width: media-sm)
+
+        &__cell
+
+            p
+                top auto
+                bottom 30px
+
+    @media screen and (max-width: media-xs)
+
+        &__title
+
+            &-title
+
+                br
+                    display none
+
+                &::after
+                    display none
+
+            &-inner
+                padding 60px 30px
+                width 100%
+

@@ -1,0 +1,196 @@
+.sidebar
+    sidebar-left = 280px
+    margin 0 0 45px 0
+
+    &__row
+        flexs()
+
+        &-left
+            width sidebar-left
+            background-color background-grey
+            padding 0 40px 40px 40px
+            border-radius $border-radius
+
+            &-footer
+                padding 30px 0 0 0
+
+                h5
+                    font-size 18px
+                    line-height @font-size * 1.25
+                    color text-color
+                    margin 0 0 30px 0
+
+                .archive__link
+                    margin-top 25px
+
+        &-right
+            width 'calc(100% - %s)' % (sidebar-left + 50px)
+            margin-left auto
+
+
+    &__menu
+        display block
+
+        &-title
+            height 90px
+            flexs(center-vertical)
+            justify-content flex-start
+            border-bottom 1px solid #c8c8c8
+            font-size 14px
+            line-height 18px
+            color #404040
+            font-weight 500
+            margin 0 0 35px 0
+
+        &-list
+            padding-bottom 30px
+            margin-bottom @padding-bottom
+            border-bottom 1px solid #c8c8c8
+
+            &.__last
+                margin-bottom 0
+
+            > li
+                margin 0 0 15px 0
+                position relative
+
+                &:last-child
+                    margin-bottom 0
+
+                &.active
+                &.active a
+                &.current-menu-item
+                &.current-menu-item a
+                    color color-brown
+                    -webkit-background-size 0% 100%
+                    background-size 0% 100%
+
+                &.active
+                &.current-menu-item
+
+                    &::before
+                        before-or-after-absolute()
+                        background-color background-brown
+                        width 5px
+                        height @width
+                        vendor(border-radius, 50%)
+                        left -18px
+                        top 7px
+
+
+            > li
+            > li a
+                color #404040
+                font-weight 600
+                font-size 14px
+                line-height 18px
+
+            a
+                lnk(#c5c5c5)
+
+
+
+    &__headpage
+        padding 20px 0 0 0
+        margin 0 0 60px 0
+
+        &-title
+            margin-bottom 0
+
+        &-row
+            flexs(center-vertical)
+
+            &--left
+            &--right
+                height 100%
+
+            &--left
+                width calc(100% - 50px)
+                padding-right 15px
+
+            &--right
+                width 50px
+                border-left: 1px solid #d2d2d2;
+                flexs()
+                justify-content flex-end
+
+                [type="button"]
+                    @extends .header .openMenu
+
+
+    @media screen and (max-width: media-md)
+
+        &__row
+
+            &-left
+                width sidebar-left - 40px
+                padding-left 20px
+                padding-right @padding-left
+
+            &-right
+                width 'calc(100% - %s)' % ((sidebar-left - 40px) + 30px)
+
+        &__menu
+
+            &-list
+
+                > li
+
+                    &.active
+                    &.current-menu-item
+
+                        &::before
+                            left -12px
+
+    @media screen and (max-width: 1100px)
+
+        &__headpage
+
+            &-row
+
+                &--right
+
+                    [type="button"]
+                        display none
+
+    @media screen and (max-width: media-sm)
+
+        &__row
+            display block
+
+            &-left
+                width 280px
+                position fixed
+                top 0
+                bottom 0
+                left 0
+                vendor(transform, translateX(-100%))
+                z-index 82
+                vendor(transition, transform .1s ease-in-out)
+                will-change transform
+                overflow auto
+                @extend .scrollbar
+
+                /.sidebar__active
+
+                    header
+                        z-index 1
+
+                    .sidebar__row-left
+                        vendor(transform, translateX(0%))
+
+            &-right
+                width 100%
+
+        &__headpage
+            padding 0px 0 0 0
+            margin 0 0 30px 0
+
+        &__headpage
+
+            &-row
+
+                &--right
+
+                    [type="button"]
+                        display inline-block

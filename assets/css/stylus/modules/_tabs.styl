@@ -1,0 +1,40 @@
+.tabproduct
+    flexs()
+    border-bottom 2px solid #d2d2d2
+    margin 0 0 40px 0
+
+    > li
+        margin 0 60px 0 0
+
+        > a
+            display block
+            padding 0 0 30px 0
+            font-weight 700
+            color #393939
+            font-size 18px
+            line-height 18px
+
+            &::after
+                before-or-after-absolute()
+                height 2px
+                background-color background-brown
+                left 0
+                width 0
+                bottom -2px
+                z-index 3
+                vendor(transition, all .5s ease-in-out)
+
+        &.active
+
+            a
+                color color-brown
+
+                &::after
+                    width 100%
+
+
+
+    &-content
+
+        > div
+            position relative

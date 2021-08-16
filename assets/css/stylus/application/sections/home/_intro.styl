@@ -1,0 +1,250 @@
+.intro
+    intro-left-width = 540px
+    margin 0 0 35px 0
+
+    &-swiper
+        flexs()
+        -webkit-box-orient horizontal
+        -webkit-box-direction reverse
+        -ms-flex-direction row-reverse
+        flex-direction row-reverse
+        background-color background-black
+        position relative
+        height 'calc(100vh - %s)' % (header-height + 60px)
+        border-radius $border-radius
+        overflow hidden
+
+        &-left
+            width intro-left-width
+            position relative
+            overflow hidden
+
+            &-inner
+                max-width 390px
+                margin 0 auto
+                padding 50px 0 0 0
+                height 100%
+                position relative
+                z-index 2
+
+                small
+                    text-transform uppercase
+                    color color-brown
+                    opacity .5
+                    font-weight 600
+                    font-size 12px
+                    letter-spacing .4em
+                    display block
+                    margin 0 0 70px 0
+
+        &-image
+            width 'calc(100% - %s)' % intro-left-width
+            vendor(background-size, cover)
+            background-repeat no-repeat
+            background-position center top
+            vendor(transition, linear all .4s)
+
+        &-text
+            h1
+                color #fff
+                text-transform uppercase
+
+            p
+                display block
+                font-size 14px
+                line-height 28px
+                color #c5c5c5
+                font-weight 500
+                margin 0 0 30px 0
+
+            ul
+                flexs()
+                flexs(flex-wrap, false)
+
+                li
+                    flexs()
+                    width 50%
+                    color color-brown
+                    font-weight 600
+                    position relative
+                    padding 0 0 0 16px
+                    margin 0 0 8px 0
+
+                    &::before
+                        before-or-after-absolute()
+                        left 0
+                        background-color background-brown
+                        width 5px
+                        height @width
+                        border-radius 50%
+                        top 6px
+
+            .btn
+                margin 40px 0 0 0
+
+
+        &-current
+            position absolute
+            bottom -50px
+            right -35px
+            font-style normal
+            font-weight 800
+            color #fff
+            font-size 140px
+            z-index 1
+            display block
+            line-height @font-size
+
+        .swiper-slide:not(.swiper-slide-active)
+            opacity 0 !important
+
+        .swiper-controls
+            position absolute
+            bottom 30px
+            right 30px
+            flexs(center-vertical)
+
+            > *
+                position relative
+                margin 0
+                left auto
+                right auto
+                top auto
+
+        &-number
+            display inline-block
+            text-align center
+            width 60px
+            font-weight 700
+            font-size 11px
+            line-height @font-size
+            color #fff
+
+            span, p
+                display inline-block
+
+            span
+
+                &:after
+                    content '/'
+                    display inline-block
+                    padding 0 4px
+                    font-size 9px
+
+    .swiper-pagination
+        position absolute
+        padding 0
+        bottom 30px
+        left -15px
+
+    .carousel
+        height 100%
+
+
+    @media screen and (max-width: media-large)
+
+        &-swiper
+
+            &-left
+                width (intro-left-width - 80px)
+
+                &-inner
+
+                    small
+                        margin 0 0 50px 0
+
+            &-image
+                width 'calc(100% - %s)' % (intro-left-width - 80px)
+
+            &-text
+
+                p
+                    margin 0 0 30px 0
+
+    @media screen and (max-width: media-md)
+
+        &-swiper
+
+            &-left
+                width (intro-left-width - 120px)
+
+                &-inner
+                    max-width 320px
+
+                    small
+                        margin 0 0 30px 0
+
+            &-image
+                width 'calc(100% - %s)' % (intro-left-width - 120px)
+
+
+
+
+    @media screen and (max-width: media-sm)
+
+        &-swiper
+            display block
+            height auto
+
+            &-left
+                width 100%
+
+                &-inner
+                    max-width none
+                    padding 80px 0px 0px 0px
+                    text-align center
+
+                    small
+                        margin 0 0 30px 0
+
+            &-image
+                display none
+
+            &-text
+                padding 0 30px 30px 30px
+
+                h1
+
+                    br
+                        display none
+
+                ul
+
+                    li
+                        padding 14px 0 0 0
+                        text-align center
+                        justify-content center
+                        margin 0 0 10px 0
+
+
+                        &::before
+                            top 0
+                            left 50%
+                            transform translateX(-50%)
+
+
+
+        .swiper-pagination
+            bottom auto
+            top 30px
+            left 50%
+            margin 0
+            vendor(transform, translateX(-50%))
+
+
+    @media screen and (max-width: media-xs)
+
+        &-swiper
+
+            &-text
+
+                ul
+
+                    li
+                        width 100%
+
+                        &:last-child
+                            margin 0
+
+
+

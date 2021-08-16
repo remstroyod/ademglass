@@ -1,0 +1,60 @@
+.fancybox
+
+	&-bg {
+		&-white {
+			background-color rgba(0, 0, 0, .2)
+		}
+	}
+
+
+	&-content
+		padding 0
+
+	&-button
+		width 60px
+		height @width
+
+		svg
+
+			path
+				fill color-brown
+
+	&-window
+	&-modal
+		width 100%
+		max-width 940px
+
+
+	&-modal
+		display none
+		width 100%
+		max-width 600px
+
+		&-header
+		&-content
+			padding-left 40px
+			padding-right @padding-left
+
+		&-header
+			padding-top 40px
+			padding-bottom @padding-top
+			border-bottom 1px solid #E0E0E0
+			text-align center
+
+			> *
+				margin 0
+
+		&-content
+			padding-top 40px
+			padding-bottom @padding-top
+
+	@media screen and (max-width: 480px)
+
+		&-modal
+
+			&-header
+			&-content
+				padding-left 30px
+				padding-right @padding-left
+
+

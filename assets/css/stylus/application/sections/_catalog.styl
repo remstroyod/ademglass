@@ -1,0 +1,397 @@
+.catalog
+    filter-border-color = #c8c8c8
+
+    &__filter
+
+        &-title
+            &-color
+                .widget-title
+                    color color-brown
+
+
+        > div
+
+            &:last-child
+
+                > div
+                    border-bottom 1px solid filter-border-color
+                    padding-bottom 40px
+                    margin-bottom 11px
+
+        &-cell
+            h5
+                flexs(center-vertical)
+                height 80px
+                color text-color
+                font-size 14px
+                line-height @font-size * 1.25
+                font-weight 600
+                border-bottom 1px solid filter-border-color
+                margin 0 0 30px 0
+
+            .form-group
+                margin 0 0 10px 0
+
+            &-line
+                margin 0 0 15px 0
+
+                &:last-child
+                    margin 0
+
+        &-clear
+            margin 20px 0 0 0
+
+            li
+                display inline-block
+                margin 0 5px 5px 0
+
+                a
+                    display block
+                    vendor(border-radius, 2px)
+                    border 2px solid background-brown
+                    font-weight 500
+                    font-size 16px
+                    line-height 28px
+                    color #959595
+                    white-space nowrap
+                    padding 0 15px
+                    border-radius $border-radius
+
+                    .fa
+                        color #4c4c4c
+                        font-size 10px
+                        margin 0 10px 0 0
+                        position relative
+                        top -1px
+
+                    &:hover
+                        background-color background-brown
+                        color #fff
+
+                        .fa
+                            color #fff
+
+    &__header
+        header-border-color = #d2d2d2
+
+        margin 0 0 35px 0
+        flexs()
+        border-bottom 1px solid header-border-color
+        padding 0 0 25px 0
+
+        &-right
+        &-left
+            padding 0px
+
+        &-left
+            padding-right 50px
+
+        &-right
+            margin-left auto
+            border-left 1px solid header-border-color
+            width 50%
+            max-width 500px
+            padding-left 50px
+
+            &-icons
+                flexs(justified)
+
+                > li
+                    opacity 1
+                    text-align center
+
+                    span
+                        display block
+                        font-size 14px
+                        font-weight 500
+                        color #3e3e3e
+
+                .svg
+                    height 50px
+                    margin-bottom 12px
+
+            &-button
+                background none
+                border none
+                width 50px
+                height 50px
+                text-align center
+                margin 0 auto
+                padding 0
+
+                .svg
+                    height 30px
+
+            &-overlay
+                position fixed
+                z-index 79
+                background-color rgba(0, 0, 0, .75)
+                top 0
+                bottom 0
+                left 0
+                width 100%
+                vendor(transform, translateX(-100%))
+                transition-delay .1s
+                vendor(transition, transform .2s ease-in-out)
+                will-change transform
+
+                &::after
+                    before-or-after-absolute('\f00d')
+                    font-family FontAwesome
+                    color #fff
+                    opacity .75
+                    font-size 15px
+                    position absolute
+                    z-index 81
+                    right 15px
+                    top 15px
+
+                /.sidebar__active .catalog__header-right-overlay
+                    vendor(transform, translateX(0%))
+
+        h1
+            font-size 38px
+            line-height 50px
+            margin 0
+
+    &__list
+        > li
+            float left
+            width 25%
+            padding 0 15px
+            margin 0 0 30px 0
+
+        &-card
+
+            &-image
+                margin 0 0 25px 0
+                vendor(box-shadow, 0 15px 50px rgba(57, 57, 57, 0.1))
+                overflow hidden
+                border-radius $border-radius
+
+                img
+                    vendor(transition, all 3.75s ease-in-out)
+
+            &-title
+                height 60px
+                overflow hidden
+
+                span
+                    lnk(#d5d5d5)
+                    color text-color
+                    font-weight 600
+                    font-size 15px
+                    line-height 26px
+
+            &:hover
+
+                img
+                    vendor(transform, scale(1.1))
+                    opacity .8
+
+                span
+                    color color-brown
+                    -webkit-background-size 0% 100%
+                    background-size 0% 100%
+
+
+    &__category
+        margin 0 0 20px 0
+        ul
+            flexs()
+            flexs(flex-wrap)
+            position relative
+
+            > li
+                width 16.6%
+                padding 0 15px
+                flexs()
+                margin 0 0 30px 0
+
+                img
+                    border-radius $border-radius
+
+        &-image
+            margin 0 0 10px 0
+
+        a
+            color text-color
+            text-decoration none
+            font-size 13px
+            line-height 18px
+            font-weight 500
+
+            &:hover
+                color color-brown
+
+            span
+                lnk(#d5d5d5)
+
+
+    &__nav
+        > li
+            opacity 1
+
+            &:not(:last-child)
+                margin-bottom 20px
+
+            > a
+                font-weight 600
+
+        a
+            font-weight 500
+            color text-color
+            font-size 13px
+            lnk(#d5d5d5)
+
+        ul
+            padding 15px 0 0 25px
+
+            > li
+
+                &:not(:last-child)
+                    margin-bottom 6px
+
+                > a
+                    font-weight normal
+
+
+
+
+
+    &__banners
+
+        img
+            width 100%
+            border-radius $border-radius
+
+
+    /.openSidebarLeft
+        display none
+
+    @media screen and (max-width: 1280px)
+
+        &__header
+
+            &-left
+                padding-right 20px
+
+            &-right
+                padding-left 20px
+
+                &-icons
+
+                        .svg
+                            height 40px
+
+            h1
+                font-size 34px
+                line-height 42px
+
+        &__list
+
+            > li
+                width 33.322%
+
+    @media screen and (max-width: media-md)
+
+        &__header
+
+            &-right
+                width 60%
+
+            h1
+                font-size 30px
+                line-height 38px
+
+
+        &__category
+            ul
+                > li
+                    width 25%
+
+
+    @media screen and (max-width: media-sm)
+
+        &__header
+
+            &-left
+                padding 0 20px 0 0
+                flexs(center-vertical)
+
+            &-right
+                width 120px
+
+                &-icons
+                    display none
+
+            h1
+                font-size 28px
+                line-height 36px
+
+        /.openSidebarLeft
+            display block
+
+        &__filter
+
+            &-clear
+                margin 10px 0 0 0
+
+                > li
+
+                    a
+                        padding 0 8px
+                        font-size 10px
+
+                        .fa
+                            margin 0 5px 0 0
+
+    @media screen and (max-width: 800px)
+
+        &__list
+
+            > li
+                width 50%
+
+            &-card
+
+                &-title
+
+                    span
+                        font-size 13px
+                        line-height 18px
+
+    @media screen and (max-width: media-xs)
+
+        &__header
+
+            h1
+                font-size 24px
+                line-height 32px
+
+
+        &__category
+            ul
+                > li
+                    width 33.3%
+
+    @media screen and (max-width: 460px)
+
+        &__list
+
+            > li
+                width 100%
+
+            &-card
+
+                &-title
+                    height 100%
+
+                    span
+                        font-size 15px
+                        line-height 22px
+
+        &__category
+            ul
+                > li
+                    width 50%

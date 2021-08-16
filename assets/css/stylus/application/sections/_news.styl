@@ -1,0 +1,84 @@
+.news
+
+    &__list
+
+        &.row
+            flexs()
+            -webkit-flex-wrap wrap
+            -ms-flex-wrap wrap
+            flex-wrap wrap
+
+        > li
+            width 25%
+            flexs()
+            margin-bottom 60px
+
+        &-card
+            display block
+            text-decoration none
+            padding 0 15px
+
+            &:hover
+
+                a
+                span
+                    -webkit-background-size 0% 100%
+                    background-size 0% 100%
+
+        &-date
+            padding 28px 0 20px 0
+            font-size 11px
+            line-height @font-size
+            color #959595
+            font-weight 500
+            letter-spacing .1em
+
+        &-title
+
+            a
+            span
+                lnk(#d5d5d5)
+                font-weight 500
+                color #636363
+                font-size 13px
+                line-height 26px
+
+                &:hover
+                    -webkit-background-size 0% 100%
+                    background-size 0% 100%
+
+        &-except
+            max-height 80px
+            color #b6b6b6
+            font-size 12px
+            line-height 20px
+            margin 18px 0 0 0
+
+
+    @media screen and (max-width: 1300px)
+
+        &__list
+
+            &.row
+
+                > li
+                    width 33.3222%
+
+    @media screen and (max-width: 640px)
+
+        &__list
+
+            &.row
+
+                > li
+                    width 50%
+
+    @media screen and (max-width: 430px)
+
+        &__list
+
+            &.row
+
+                > li
+                    width 100%
+                    margin-bottom 40px
