@@ -1,544 +1,396 @@
-header
-    z-index 5
-    padding padd-top 0 0 0
+header {
+    z-index; 5;
+    padding; padd-top 0 0 0;
+}
 
-    /.header
-        flexs(center-vertical)
-        margin 0 0px
-        height header-height
-        border-bottom 1px solid transparent
+.header {
+    header-logo-width = 243px;
+    header-logo-width-1340 = 200px;
+    header-logo-width-md = 140px;
+    header-contacts-width = 400px;
+    header-contacts-width-1340 = 340px;
+    header-contacts-width-md = 280px;
 
-        > .container-fluid
-            position relative
-            z-index 2
+    &__top {
 
-        &__left
-            width header-logo-width
+        &-row {
+            flexs(center-vertical);
+            vendor(justify-content, space-between);
+            height: 120px;
+            border-bottom: 1px solid #cdcac8;
+            @media screen and (max-width: media-md) {
+                height: 80px;
+            }
+        }
 
-        &__right
-            width 'calc(100% - %s)' % header-logo-width
-            margin-left 30px
-            flexs(justified)
-            flexs(center-vertical, false)
-
-            > *
-                white-space nowrap
-
-        &__logo
-
-            &-white
-                display none
-
-            img, svg
-                width 174px
-
-        &__contacts
-            flexs()
-            position relative
-
-            a
-                flexs(center-vertical)
-                position relative
-                z-index 3
-
-            .svg
-                height 15px
-                margin 0 12px 0 0
-
-            &-city
-                margin 0 30px 0 0
-                line-height 16px
-
-                span
-                    display inline-block
-                    border-bottom 1px dashed
-
-                &-list
-                    bottom auto !important
-                    top 0
-                    z-index 4
-                    margin -11px 0px 0 0
-
-            &-tel
-                font-weight 500
-                font-size 16px
+    }
 
 
+    &__bottom {
+
+        &-row {
+            height: 60px;
+            flexs(center-vertical);
+            vendor(justify-content, center);
+        }
+
+    }
 
 
-        &__nav
-            flexs(justified)
-            font-size 11px
-            line-height @font-size
-            text-transform uppercase
-            font-weight 700
-            width 100%
-            max-width 380px
+    &__logo {
+        width: header-logo-width;
+        flexs(center-vertical);
+        @media screen and (max-width: 1340px) {
+            width: header-logo-width-1340;
+        }
+        @media screen and (max-width: media-md) {
+            width: header-logo-width-md;
+        }
 
-            > li
-                white-space nowrap
-
-                &:not(:last-child)
-                    margin-right 30px
-
-                    @media screen and (max-width: 1400px)
-                        margin-right 18px
-
-        &__btn
-            flexs()
-            margin 0 25px
-
-            &-decisions
-
-                p
-                    display inline
-
-            .btn
-                margin 0 5px
-
-            &-menu
-                flexs(center-vertical)
-                padding-left 20px !important
-                padding-right @padding-left
-
-                > div
-                    position relative
-                    width 14px
-                    height 11px
-                    margin 0 20px 0 0
-
-                    i
-                        position absolute
-                        height 1px
-                        left 0
-                        width 100%
-                        background-color #fff
-                        top 50%
-                        vendor(transition, all .15s ease)
-
-                        &:nth-child(1)
-                            top 0
-                            will-change top
-
-                            ^[-3]:hover ^[4..-1]
-                                width 80%
-
-                        &:nth-child(2)
-                            margin-top -1px
-
-                        &:nth-child(3)
-                            top auto
-                            bottom 0
-
-                            ^[-3]:hover ^[4..-1]
-                                width 60%
-
-
-
-
-        .openMenu
+        &-white {
             display none
-            padding 0
-            width 40px
-            height @width
-            border none
-            background none
-            position relative
-
-            span
-                position absolute
-                display block
-                height 1px
-                background-color text-color
-                width 24px
-                right 0
-                top 50%
-                margin-top -1px
-                vendor(transition, all .3s ease)
-                will-change width
-
-                &:nth-child(1)
-                    margin-top -8px
-
-                    ^[-2]:hover ^[4..-2]
-                        width 20px
-
-                &:nth-child(3)
-                    margin-top 7px
-
-                    ^[-2]:hover ^[4..-2]
-                        width 15px
-
-
-        @media screen and (max-width: media-large)
-            opacity 1
-
-            &__nav
-                font-size 10px
-
-            &__contacts
-
-                &-city
-                    opacity 1
-                    margin 0 15px 0 0
-
-            &__btn
-                margin 0 15px
-
-                .btn
-                    padding-right 15px !important
-                    padding-left @padding-right
-
-                    p
-                        display none
-
-                &-menu
-
-                    > div
-                        margin 0 15px 0 0
-
-
-
-        @media screen and (max-width: media-md)
-
-            &__contacts
-
-                &-city
-                    position absolute
-                    width 0px
-                    opacity 0
-
-        @media screen and (max-width: 1100px)
-            margin 0
-
-            &__btn
-
-                &-menu
-                    display none
-
-                .btn
-
-                    p
-                        display inline
-
-            &__contacts
-
-                &-city
-                    position static
-                    width auto
-                    opacity 1
-
-            &__nav
-                display none
-
-            .openMenu
-                display inline-block
-
-
-        @media screen and (max-width: media-sm)
-
-            flexs(justified)
-
-            &__right
-                margin 0
-
-        @media screen and (max-width: media-xs)
-
-            &__right
-            &__left
-                width auto
-
-            &__btn
-            &__contacts
-                display none
-
-
-
-    @media screen and (max-width: 1100px)
-        padding 0
-
-    /.menucatalog__active
-
-        .header
-            border-bottom-color rgba(255, 255, 255, .1)
-
-            .openMenu
-
-                span
-                    background-color #808080
-
-            &__logo
-
-                &-black
-                    display none
-
-                &-white
-                    display inline-block
-
-            &__contacts
-                color #cdcdcd
-
-                a
-                    color @color
-
-                .dropdown-menu
-
-                    a
-                        color text-color
-
-                .svg
-
-                    path
-                        fill color-brown !important
-
-
-            &__nav
-
-                > li
-
-                    > a
-                        color #e0e0e0
-                        @extends .links
-                        -webkit-background-size 0% 100%
-                        background-size 0% 100%
-
-                        &:hover
-                            color color-brown
-                            -webkit-background-size 100% 100%
-                            background-size 100% 100%
-
-            &__btn
-
-                &-menu
-
-                    > div
-
-                        i
-
-                            &:nth-child(1)
-                                vendor(transform, rotate(45deg))
-                                top 50%
-                                bottom auto
-
-                                ^[-3]:hover ^[5..-1]
-                                    width 95%
-
-                            &:nth-child(2)
-                                width 0
-
-                            &:nth-child(3)
-                                vendor(transform, rotate(-45deg))
-                                top 50%
-                                bottom auto
-
-                                ^[-3]:hover ^[5..-1]
-                                    width 95%
-
-                .btn
-
-                    &:first-child
-                        color color-brown
-
-                        &:hover
-                            color #fff
-
-            .logo
-                display block
-
-
-
-
-    /.mobilemenu
-        position fixed
-        width 320px
-        background-color #393939
-        top 0
-        bottom 0
-        right 0
-        z-index 80
-        overflow auto
-        @extend .scrollbar
-        vendor(transition, transform .2s ease)
-        vendor(transform, translateX(100%))
-        will-change transform
-
-        &__close
-            position fixed
-            z-index 79
-            background-color rgba(0, 0, 0, .75)
-            width 100%
-            top 0
-            bottom 0
-            left 0
-            will-change transform
-            vendor(transition, transform .2s ease)
-            vendor(transform, translateX(100%))
-            transition-delay .1s
-
-            &::after
-                before-or-after-absolute('\f00d')
-                font-family FontAwesome
-                color #fff
-                opacity .75
-                font-size 15px
-                position absolute
-                z-index 81
-                left 15px
-                top 15px
-
-
-        /.menu__active
-
-            .mobilemenu
-            .mobilemenu__close
-                vendor(transform, translateX(0%))
-
-        &__row
-
-            &-footer
-                margin-top auto
-                padding: 60px 40px 40px 40px;
-
-            &-header
-                margin 0 0 0px 0
-
-                .header__contacts
-                    flexs(justified)
-                    flexs(center-vertical, false)
-                    height 80px
-                    padding 0 40px
-                    white-space nowrap
-
-                    a
-                        color #fff
-                        opacity .65
-
-                    .svg
-                        display none
-
-
-
-        .slinky
-
-            &-theme
-
-                &-default
-                    background-color transparent
-
-                    .next
-
-                        &::after
-                            content '\f105'
-                            font-family FontAwesome
-                            background none
-                            color #fff
-                            opacity .5
-                            font-size 16px
-                            width auto
-                            height auto
-
-                    .back
-
-                        &::before
-                            opacity 1
-
-
-                    li
-                        font-weight 600
-                        position static
-                        border-bottom 1px solid rgba(255, 255, 255, .05)
-
-                        &.headers
-                            background-color background-brown
-                            position relative
-                            flexs(center-vertical)
-
-                            > a
-                                padding 20px 30px
-
-                            .title
-                                padding 0
-
-
-
-                    a
-                        &:not(.back)
-                            color color-brown
-                            padding 17px 40px 17px 40px
-
-
-
-
-        .megamenu__inner-right
-            width 100%
-
-        .megamenu__download
-
-            > div
-
-                img
-                    max-width 80%
-
-
-
-
-        .header__btn-decisions
-            border-color transparent !important
-            background-color rgba(255, 255, 255, .1)
-            text-align left
-            padding-left 40px
-            font-size 13px
-
-        .dropdown-menu
-            left 0
-            right 0
-            width 100%
-            top 100% !important
-            background-color background-brown
-
-            > li
-
-                > a
-                    color #fff
-                    padding 12px 40px
-
-        @media screen and (max-width: media-ls)
-            width 280px
-
-            &__row
-
-                &-header
-
-                    .header__contacts
-                        padding 0 20px
-
-                &-footer
-                    padding 30px 20px 30px 20px
-
-            .slinky
-
-                &-theme
-
-                    &-default
-
-                        a
-
-                            &:not(.back)
-                                padding 17px 20px
-
-
-            .header__btn-decisions
-                padding-left 20px
-
-
-            .dropdown-menu
-
-                > li
-
-                    > a
-                        padding 12px 20px
-
-
+        }
+    }
+
+
+    &__nav {
+        width: 'calc(100% - %s)' % (header-logo-width +  header-contacts-width);
+        padding: 0 35px 0 45px;
+        @media screen and (max-width: 1340px) {
+            width: 'calc(100% - %s)' % (header-logo-width-1340 +  header-contacts-width-1340);
+            padding: 0 20px;
+        }
+        @media screen and (max-width: media-md) {
+            width: 'calc(100% - %s)' % (header-logo-width-md +  header-contacts-width-md);
+        }
+
+        &-list {
+            width: 100%;
+            flexs(center-vertical);
+            vendor(justify-content, space-between);
+            position: relative;
+
+            > li:not(.catalog_link),
+            > li:not(.catalog_link) > a {
+                color: #585151;
+                font-weight: 500;
+                font-size: 14px;
+                @media screen and (max-width: media-md) {
+                    font-size: 13px;
+                }
+
+            }
+            > li {
+                position: relative;
+
+                > a {
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: color-brown;
+                    }
+                }
+
+                &.catalog_link {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: color-brown;
+                    @media screen and (max-width: media-md) {
+                        font-size: 13px;
+                    }
+
+                    > a {
+                        color: color-brown;
+                        padding: 0 0 0 28px;
+                        background: url('images/icon_header_catalog.png') left center no-repeat;
+                    }
+
+                }
+
+                &.current_page_item {
+                    > a {
+                        color: color-brown;
+                    }
+                }
+
+                &:hover {
+                    > ul {
+                        display: block;
+                    }
+                }
+
+                > ul {
+
+                    position: absolute;
+                    z-index: 80;
+                    width: 770px;
+                    left: 0;
+                    top: 100%;
+                    background-color: #f8f8f8;
+                    vendor(box-shadow, 0px 10px 45px 0px rgba(182, 182, 182, 0.25));
+                    vendor(border-radius, $border-radius-element);
+                    vendor(column-count, 3);
+                    vendor(column-gap, 30px);
+                    padding: 40px 40px 15px 40px;
+                    display: none;
+
+                    > li {
+                        margin: 0 0 15px 0;
+                        vendor(break-inside, avoid);
+                        vendor(page-break-inside, avoid);
+                        vendor(break-inside, avoid);
+
+                        > a {
+                            font-size: 14px;
+                        }
+
+                        > ul {
+                            font-size: 14px;
+                            padding: 15px 0 0 0;
+
+                            > li {
+                                &:not(:last-child) {
+                                    margin: 0 0 4px 0;
+                                }
+
+                                ul {
+                                    padding: 8px 0 8px 8px;
+                                }
+                            }
+
+                            a {
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__contacts {
+        width: header-contacts-width;
+        flexs(center-vertical);
+        vendor(justify-content, space-between);
+        @media screen and (max-width: 1340px) {
+            width: header-contacts-width-1340;
+        }
+        @media screen and (max-width: media-md) {
+            width: header-contacts-width-md;
+        }
+
+        &-city {
+            position: relative;
+
+            &-dropdown {
+                flexs(center-vertical);
+                background-color: #f4f4f4;
+                vendor(border-radius, $border-radius-element);
+                padding: 6px 15px;
+                color: #b8b1b1;
+                font-weight: 500;
+                font-size: 14px;
+                white-space: nowrap;
+                @media screen and (max-width: 1340px) {
+                    font-size: 12px;
+                }
+                @media screen and (max-width: media-md) {
+                    padding: 4px 5px;
+                }
+
+                .fa {
+                    font-size: 18px;
+                    margin: 0 0 0 10px;
+                    @media screen and (max-width: media-md) {
+                        margin: 0 0 0 4px;
+                    }
+                }
+            }
+
+            &-list {
+                margin-top: -34px;
+                vendor(border-radius, $border-radius-element);
+                overflow: hidden;
+                background-color: #f8f8f8;
+                font-size: 14px;
+
+                > li,
+                > li > a {
+                    color: #b8b1b1;
+
+                    &:hover {
+                        color: color-brown;
+                    }
+                }
+            }
+        }
+
+        &-phone {
+            flexs(center-vertical);
+            vendor(justify-content, space-between);
+
+            &-right {
+                flexs();
+                vendor(flex-direction, column);
+                vendor(justify-content, flex-end);
+                vendor(align-items, flex-end);
+            }
+
+            a {
+                text-align: right;
+            }
+
+            &-social {
+                margin: 0 29px 0 0;
+                @media screen and (max-width: 1340px) {
+                    margin: 0 15px 0 0;
+                }
+                @media screen and (max-width: media-md) {
+                    margin: 0 10px 0 0;
+                }
+            }
+
+            &-tel {
+                font-weight: 700;
+                font-size: 20px;
+                color: color-brown;
+                margin: 0 0 10px 0;
+                white-space: nowrap;
+                @media screen and (max-width: 1340px) {
+                    font-size: 18px;
+                    margin: 0;
+                }
+                @media screen and (max-width: media-md) {
+                    font-size: 16px;
+                }
+            }
+
+            &-email {
+                font-weight: 300;
+                color: #838383;
+                font-size: 14px;
+                @media screen and (max-width: 1340px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+
+    &__menu {
+        flexs(center-vertical);
+        @media screen and (max-width: 1320px) {
+            width: 100%;
+            vendor(justify-content, space-between);
+
+        }
+
+        > li,
+        > li > a {
+            font-weight: 500;
+            font-size: 18px;
+            color: #404040;
+            white-space: nowrap;
+            @media screen and (max-width: media-md) {
+                font-size: 14px;
+            }
+        }
+
+        > li {
+            padding: 0 28px;
+            @media screen and (max-width: 1320px) {
+                padding: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            > a {
+                &:hover {
+                    color: color-brown;
+                }
+            }
+
+            &.calculator_link {
+
+                > a {
+                    color: color-brown;
+                    padding-right: 44px;
+                    background: url('images/icon_calc_gradient.png') right center no-repeat;
+                }
+            }
+
+        }
+    }
+
+
+    &__search {
+        margin: 0 0 0 60px;
+        position: relative;
+
+        [type="submit"] {
+            position: absolute;
+            z-index: 3;
+            width: 50px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            outline: none;
+            border: none;
+            background: none;
+
+            &:hover {
+                color: color-brown;
+            }
+        }
+
+        [type="text"] {
+            position: relative;
+            z-index: 1;
+            background: #f4f4f4;
+            vendor(border-radius, $border-radius-element);
+            border: none;
+            outline: none;
+            height: 36px;
+            padding: 0 50px 0 25px;
+            line-height: 36px;
+            font-size: 14px;
+            color: #8c8c8c;
+
+            &::placeholder {
+                color: #8c8c8c;
+            }
+        }
+    }
+
+
+
+    .openMenu {
+        display: none;
+    }
+
+
+
+
+
+
+
+    .openMenu {
+
+    }
+
+}
+
+
+.mobilemenu {
+    display: none;
+}
 
 .megamenu
     z-index 4
@@ -628,21 +480,28 @@ header
     &__download
 
         .btn
+        margin 0 0 20px 0
+
+        > div
+            background-color #808080
+            width 100%
+            height header-logo-width
+            position relative
             margin 0 0 20px 0
 
-            > div
-                background-color #808080
-                width 100%
-                height header-logo-width
-                position relative
-                margin 0 0 20px 0
-
-                img
-                    position absolute
-                    left 50%
-                    top 55%
-                    vendor(transform, translateY(-50%) translateX(-50%))
-                    max-width 115%
+            img
+                position absolute
+                left 50%
+                top 55%
+                vendor(transform, translateY(-50%) translateX(-50%))
+                max-width 115%
 
     .btn-opacity
         color color-brown
+
+
+.menu__active
+
+    .mobilemenu
+    .mobilemenu__close
+        vendor(transform, translateX(0%))

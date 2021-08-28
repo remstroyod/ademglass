@@ -9,6 +9,7 @@ endif;
 /*-- Theme Settings --*/
 if ( ! function_exists( 'adem_setup' ) ) :
 	function adem_setup() {
+        add_theme_support( 'html5', array( 'search-form' ) );
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -140,24 +141,13 @@ add_filter('parse_query', 'adem_true_urldecode_s');
  */
 add_filter( 'get_search_form', 'adem_search_form' );
 function adem_search_form( $form ) {
-    $form = '
-	<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" class="header-form" >
 
-	        <input
-			    type="search"
-			    name="s" 
-			    id="s" 
-			    value="' . get_search_query() . '"
-			    placeholder="Поиск товаров"
-			    class="header-form__input"
-		    >
-		    
-		    <button 
-		            type="submit" 
-		            id="searchsubmit" 
-		            class="header-form__button header-form__button-submit"
-		            >
+    $form = '
+	<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Поиск" />
+		<button type="submit" id="searchsubmit"><i class="fa fa-search"></i></button>
 	</form>';
+
     return $form;
 }
 

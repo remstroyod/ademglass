@@ -1,0 +1,648 @@
+header
+    z-index 5
+    padding padd-top 0 0 0
+
+    /.header
+        flexs(center-vertical)
+        margin 0 0px
+        height header-height
+        border-bottom 1px solid transparent
+
+        > .container-fluid
+            position relative
+            z-index 2
+
+        &__left
+            width header-logo-width
+
+        &__right
+            width 'calc(100% - %s)' % header-logo-width
+            margin-left 30px
+            flexs(justified)
+            flexs(center-vertical, false)
+
+            > *
+                white-space nowrap
+
+        &__logo
+
+            &-white
+                display none
+
+            img, svg
+                width 174px
+
+        &__contacts
+            flexs()
+            position relative
+
+            a
+                flexs(center-vertical)
+                position relative
+                z-index 3
+
+            .svg
+                height 15px
+                margin 0 12px 0 0
+
+            &-city
+                margin 0 30px 0 0
+                line-height 16px
+
+                span
+                    display inline-block
+                    border-bottom 1px dashed
+
+                &-list
+                    bottom auto !important
+                    top 0
+                    z-index 4
+                    margin -11px 0px 0 0
+
+            &-tel
+                font-weight 500
+                font-size 16px
+
+
+
+
+        &__nav
+            flexs(justified)
+            font-size 11px
+            line-height @font-size
+            text-transform uppercase
+            font-weight 700
+            width 100%
+            max-width 380px
+
+            > li
+                white-space nowrap
+
+                &:not(:last-child)
+                    margin-right 30px
+
+                    @media screen and (max-width: 1400px)
+                        margin-right 18px
+
+        &__btn
+            flexs()
+            margin 0 25px
+
+            &-decisions
+
+                p
+                    display inline
+
+            .btn
+                margin 0 5px
+
+            &-menu
+                flexs(center-vertical)
+                padding-left 20px !important
+                padding-right @padding-left
+
+                > div
+                    position relative
+                    width 14px
+                    height 11px
+                    margin 0 20px 0 0
+
+                    i
+                        position absolute
+                        height 1px
+                        left 0
+                        width 100%
+                        background-color #fff
+                        top 50%
+                        vendor(transition, all .15s ease)
+
+                        &:nth-child(1)
+                            top 0
+                            will-change top
+
+                            ^[-3]:hover ^[4..-1]
+                                width 80%
+
+                        &:nth-child(2)
+                            margin-top -1px
+
+                        &:nth-child(3)
+                            top auto
+                            bottom 0
+
+                            ^[-3]:hover ^[4..-1]
+                                width 60%
+
+
+
+
+        .openMenu
+            display none
+            padding 0
+            width 40px
+            height @width
+            border none
+            background none
+            position relative
+
+            span
+                position absolute
+                display block
+                height 1px
+                background-color text-color
+                width 24px
+                right 0
+                top 50%
+                margin-top -1px
+                vendor(transition, all .3s ease)
+                will-change width
+
+                &:nth-child(1)
+                    margin-top -8px
+
+                    ^[-2]:hover ^[4..-2]
+                        width 20px
+
+                &:nth-child(3)
+                    margin-top 7px
+
+                    ^[-2]:hover ^[4..-2]
+                        width 15px
+
+
+        @media screen and (max-width: media-large)
+            opacity 1
+
+            &__nav
+                font-size 10px
+
+            &__contacts
+
+                &-city
+                    opacity 1
+                    margin 0 15px 0 0
+
+            &__btn
+                margin 0 15px
+
+                .btn
+                    padding-right 15px !important
+                    padding-left @padding-right
+
+                    p
+                        display none
+
+                &-menu
+
+                    > div
+                        margin 0 15px 0 0
+
+
+
+        @media screen and (max-width: media-md)
+
+            &__contacts
+
+                &-city
+                    position absolute
+                    width 0px
+                    opacity 0
+
+        @media screen and (max-width: 1100px)
+            margin 0
+
+            &__btn
+
+                &-menu
+                    display none
+
+                .btn
+
+                    p
+                        display inline
+
+            &__contacts
+
+                &-city
+                    position static
+                    width auto
+                    opacity 1
+
+            &__nav
+                display none
+
+            .openMenu
+                display inline-block
+
+
+        @media screen and (max-width: media-sm)
+
+            flexs(justified)
+
+            &__right
+                margin 0
+
+        @media screen and (max-width: media-xs)
+
+            &__right
+            &__left
+                width auto
+
+            &__btn
+            &__contacts
+                display none
+
+
+
+    @media screen and (max-width: 1100px)
+        padding 0
+
+    /.menucatalog__active
+
+        .header
+            border-bottom-color rgba(255, 255, 255, .1)
+
+            .openMenu
+
+                span
+                    background-color #808080
+
+            &__logo
+
+                &-black
+                    display none
+
+                &-white
+                    display inline-block
+
+            &__contacts
+                color #cdcdcd
+
+                a
+                    color @color
+
+                .dropdown-menu
+
+                    a
+                        color text-color
+
+                .svg
+
+                    path
+                        fill color-brown !important
+
+
+            &__nav
+
+                > li
+
+                    > a
+                        color #e0e0e0
+                        @extends .links
+                        -webkit-background-size 0% 100%
+                        background-size 0% 100%
+
+                        &:hover
+                            color color-brown
+                            -webkit-background-size 100% 100%
+                            background-size 100% 100%
+
+            &__btn
+
+                &-menu
+
+                    > div
+
+                        i
+
+                            &:nth-child(1)
+                                vendor(transform, rotate(45deg))
+                                top 50%
+                                bottom auto
+
+                                ^[-3]:hover ^[5..-1]
+                                    width 95%
+
+                            &:nth-child(2)
+                                width 0
+
+                            &:nth-child(3)
+                                vendor(transform, rotate(-45deg))
+                                top 50%
+                                bottom auto
+
+                                ^[-3]:hover ^[5..-1]
+                                    width 95%
+
+                .btn
+
+                    &:first-child
+                        color color-brown
+
+                        &:hover
+                            color #fff
+
+            .logo
+                display block
+
+
+
+
+    /.mobilemenu
+        position fixed
+        width 320px
+        background-color #393939
+        top 0
+        bottom 0
+        right 0
+        z-index 80
+        overflow auto
+        @extend .scrollbar
+        vendor(transition, transform .2s ease)
+        vendor(transform, translateX(100%))
+        will-change transform
+
+        &__close
+            position fixed
+            z-index 79
+            background-color rgba(0, 0, 0, .75)
+            width 100%
+            top 0
+            bottom 0
+            left 0
+            will-change transform
+            vendor(transition, transform .2s ease)
+            vendor(transform, translateX(100%))
+            transition-delay .1s
+
+            &::after
+                before-or-after-absolute('\f00d')
+                font-family FontAwesome
+                color #fff
+                opacity .75
+                font-size 15px
+                position absolute
+                z-index 81
+                left 15px
+                top 15px
+
+
+        /.menu__active
+
+            .mobilemenu
+            .mobilemenu__close
+                vendor(transform, translateX(0%))
+
+        &__row
+
+            &-footer
+                margin-top auto
+                padding: 60px 40px 40px 40px;
+
+            &-header
+                margin 0 0 0px 0
+
+                .header__contacts
+                    flexs(justified)
+                    flexs(center-vertical, false)
+                    height 80px
+                    padding 0 40px
+                    white-space nowrap
+
+                    a
+                        color #fff
+                        opacity .65
+
+                    .svg
+                        display none
+
+
+
+        .slinky
+
+            &-theme
+
+                &-default
+                    background-color transparent
+
+                    .next
+
+                        &::after
+                            content '\f105'
+                            font-family FontAwesome
+                            background none
+                            color #fff
+                            opacity .5
+                            font-size 16px
+                            width auto
+                            height auto
+
+                    .back
+
+                        &::before
+                            opacity 1
+
+
+                    li
+                        font-weight 600
+                        position static
+                        border-bottom 1px solid rgba(255, 255, 255, .05)
+
+                        &.headers
+                            background-color background-brown
+                            position relative
+                            flexs(center-vertical)
+
+                            > a
+                                padding 20px 30px
+
+                            .title
+                                padding 0
+
+
+
+                    a
+                        &:not(.back)
+                            color color-brown
+                            padding 17px 40px 17px 40px
+
+
+
+
+        .megamenu__inner-right
+            width 100%
+
+        .megamenu__download
+
+            > div
+
+                img
+                    max-width 80%
+
+
+
+
+        .header__btn-decisions
+            border-color transparent !important
+            background-color rgba(255, 255, 255, .1)
+            text-align left
+            padding-left 40px
+            font-size 13px
+
+        .dropdown-menu
+            left 0
+            right 0
+            width 100%
+            top 100% !important
+            background-color background-brown
+
+            > li
+
+                > a
+                    color #fff
+                    padding 12px 40px
+
+        @media screen and (max-width: media-ls)
+            width 280px
+
+            &__row
+
+                &-header
+
+                    .header__contacts
+                        padding 0 20px
+
+                &-footer
+                    padding 30px 20px 30px 20px
+
+            .slinky
+
+                &-theme
+
+                    &-default
+
+                        a
+
+                            &:not(.back)
+                                padding 17px 20px
+
+
+            .header__btn-decisions
+                padding-left 20px
+
+
+            .dropdown-menu
+
+                > li
+
+                    > a
+                        padding 12px 20px
+
+
+
+.megamenu
+    z-index 4
+    background-color transparent
+    padding 180px 50px 0 50px
+    opacity 0
+    bottom -100%
+    position fixed
+    width 100%
+    left 0
+    height 100%
+    vendor(transition, opacity .3s ease)
+
+    &::after
+        before-or-after-absolute()
+        background-color #393939
+        //border 30px solid #fff
+        left 0
+        top 0
+        height 100%
+        width 100%
+        z-index -1
+
+    /.menucatalog__active &
+        opacity 1
+        bottom 0
+
+    &__inner
+        flexs()
+        -webkit-box-orient horizontal
+        -webkit-box-direction reverse
+        -ms-flex-direction row-reverse
+        flex-direction row-reverse
+        opacity 0
+        vendor(transition, all .6s ease)
+        transition-delay .3s
+        vendor(transform, translateY(20px))
+
+        /.menucatalog__active &
+            opacity 1
+            vendor(transform, translateX(0px))
+
+        &-left
+            width 'calc(100% - %s)' % header-logo-width
+            margin-left 70px
+            overflow auto
+            height calc(100vh - 230px)
+            @extend .scrollbar
+
+        &-right
+            width header-logo-width
+
+    &__menu
+        margin: 0;
+        padding: 0;
+        vendor(column-count, 3)
+        vendor(column-gap, 100px)
+
+        > li
+            width 100%
+            display inline-block
+            margin 0 0 50px 0
+
+            > a
+                @extends .links
+                color color-brown
+                font-weight 700
+                font-size 15px
+                line-height @font-size * 1.3
+
+            ul
+                padding 25px 0 0 0
+
+                > li
+
+                    &:not(:last-child)
+                        margin 0 0 10px 0
+
+                    > a
+                        @extends .links-grey
+                        color #cecece
+                        font-size 13px
+                        line-height @font-size * 1.3
+                        font-weight 500
+
+
+    &__download
+
+        .btn
+            margin 0 0 20px 0
+
+            > div
+                background-color #808080
+                width 100%
+                height header-logo-width
+                position relative
+                margin 0 0 20px 0
+
+                img
+                    position absolute
+                    left 50%
+                    top 55%
+                    vendor(transform, translateY(-50%) translateX(-50%))
+                    max-width 115%
+
+    .btn-opacity
+        color color-brown

@@ -14,13 +14,13 @@ function jquery_script_method() {
 	wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/src/jquery/jquery.js', false, '3.4.1', false );
 	wp_enqueue_script( 'jquery' );
 }
-/** 
+/**
  * CSS files
  */
 add_action( 'wp_enqueue_scripts', 'adem_styles' );
 function adem_styles() {
-    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.2' );
-    wp_enqueue_style( 'customize-adem', get_template_directory_uri() . '/assets/css/customize.css', array(), '1.0.1' );
+    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.1.0' );
+    wp_enqueue_style( 'customize-adem', get_template_directory_uri() . '/assets/css/customize.css', array(), '1.0.2' );
 }
 /**
  * JS files

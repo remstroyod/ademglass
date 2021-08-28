@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Page: Contacts
  */
@@ -16,30 +16,30 @@ endif;
             <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
 
                 <!-- row -->
-                <div class="sidebar__row">
+<!--                <div class="sidebar__row">-->
 
                     <!-- left -->
-                    <div class="sidebar__row-left">
-
-                        <!-- Menu -->
-                        <div class="sidebar__menu">
-                            <?= get_template_part( 'template-parts/partials/partial', 'leftmenu-one' ); ?>
-                            <?= get_template_part( 'template-parts/partials/partial', 'leftmenu-two' ); ?>
-                        </div>
-                        <!-- End Menu -->
-
-                        <!-- news last -->
-                        <div class="sidebar__row-left-footer">
-                            <?= get_template_part( 'template-parts/partials/partial', 'news-last' ) ?>
-                        </div>
-                        <!-- end news last -->
-
-                    </div>
+<!--                    <div class="sidebar__row-left">-->
+<!---->
+<!---->
+<!--                        <div class="sidebar__menu">-->
+<!--                            --><?//= get_template_part( 'template-parts/partials/partial', 'leftmenu-one' ); ?>
+<!--                            --><?//= get_template_part( 'template-parts/partials/partial', 'leftmenu-two' ); ?>
+<!--                        </div>-->
+<!---->
+<!---->
+<!---->
+<!--                        <div class="sidebar__row-left-footer">-->
+<!--                            --><?//= get_template_part( 'template-parts/partials/partial', 'news-last' ) ?>
+<!--                        </div>-->
+<!---->
+<!---->
+<!--                    </div>-->
                     <!-- end left -->
 
 
                     <!-- right -->
-                    <div class="sidebar__row-right">
+<!--                    <div class="sidebar__row-right">-->
 
                         <?= get_template_part('template-parts/partials/partial', 'titlepage'); ?>
 
@@ -188,10 +188,10 @@ endif;
                         </div>
                         <!-- end contacts -->
 
-                    </div>
+<!--                    </div>-->
                     <!-- end right -->
 
-                </div>
+<!--                </div>-->
                 <!-- end row -->
 
             </div>

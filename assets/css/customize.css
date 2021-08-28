@@ -9,9 +9,24 @@
     bottom: -20px;
     font-size: 11px;
     line-height: 13px;
+    display: none !important;
 }
 .wpcf7-not-valid {
     border-color: #ff4343;
+}
+
+.wpcf7-not-valid {
+
+}
+.wpcf7-not-valid::-moz-placeholder {
+    color: #ff4343;
+    opacity: 1;
+}
+.wpcf7-not-valid:-ms-input-placeholder {
+    color: #ff4343;
+}
+.wpcf7-not-valid::-webkit-input-placeholder {
+    color: #ff4343;
 }
 
 @-webkit-keyframes opacity-ellipsis {

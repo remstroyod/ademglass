@@ -28,123 +28,167 @@ function adem_header_TagHeaderInner() {
                 <!-- header -->
                 <div class="header">
 
-                    <!-- left -->
-                    <div class="header__left">
+                    <div class="header__top">
 
-                        <!-- logo -->
-                        <a href="<?= get_home_url() ?>" class="header__logo">
+                        <div class="header__top-row">
 
                             <!-- logo -->
-                            <?php
-                            $logo_black = get_theme_mod( 'logo_header_black' );
-                            $logo_white = get_theme_mod( 'logo_header_white' );
-                            ?>
-                            <img
-                                    src="<?= $logo_black ?>"
-                                    alt="<?= get_bloginfo('name') ?>"
-                                    title="<?= get_bloginfo('name') ?>"
-                                    class="header__logo-black"
-                            >
-                            <img
-                                    src="<?= $logo_white ?>"
-                                    alt="<?= get_bloginfo('name') ?>"
-                                    title="<?= get_bloginfo('name') ?>"
-                                    class="header__logo-white"
-                            >
-                        </a>
-                        <!-- end logo -->
+                            <a href="<?= get_home_url() ?>" class="header__logo">
 
-                    </div>
-                    <!-- end left -->
-
-                    <!-- right -->
-                    <div class="header__right">
-
-                        <!-- nav -->
-                        <?php
-                        /*
-                         * Args Nav Menu
-                         */
-                        $args = array(
-                            'theme_location'    => 'header-menu',
-                            'container'         => '',
-                            'container_class'   => '',
-                            'menu_class'        => '',
-                            'items_wrap'        => '<ul class="header__nav">%3$s</ul>'
-                        );
-                        wp_nav_menu($args);
-                        ?>
-                        <!-- end nav -->
-
-                        <!-- btn -->
-                        <div class="header__btn">
-                            <a href="<?= the_permalink(27) ?>" class="btn btn-opacity btn-sm header__btn-decisions">
-                                <span>Решения <p>под проекты</p></span>
-                            </a>
-                            <a href="<?= get_permalink(wc_get_page_id('shop')) ?>" class="btn header__btn-menu openMenuCatalog btn-sm btn-animate">
-                                <div>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <span>Каталог</span>
-                            </a>
-                        </div>
-                        <!-- end btn -->
-
-                        <?php if( have_rows( 'contacts-city-list', 'options' ) ) : ?>
-                        <!-- contacts -->
-                        <div class="header__contacts dropup">
-                            <?php
-                            $city_list = get_field( 'contacts-city-list', 'options' );
-                            $city_active = array_filter($city_list, function ($var) {
-                                return ($var['contacts-city-list-cityactive'] == 1);
-                            });
-                            ?>
-                            <a
-                                    href="#location"
-                                    class="header__contacts-city dropdown-toggle"
-                                    type="button"
-                                    id="header__contacts-city-list"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                            >
+                                <!-- logo -->
+                                <?php
+                                $logo_black = get_theme_mod( 'logo_header_black' );
+                                $logo_white = get_theme_mod( 'logo_header_white' );
+                                ?>
                                 <img
-                                        src="<?= get_template_directory_uri() . '/assets/' ?>css/images/icon-location.svg"
-                                        alt=""
-                                        title=""
-                                        class="svg"
+                                        src="<?= $logo_black ?>"
+                                        alt="<?= get_bloginfo('name') ?>"
+                                        title="<?= get_bloginfo('name') ?>"
+                                        class="header__logo-black"
                                 >
-                                <span>г. <?= $city_active[0]['contacts-city-list-title'] ?></span>
-                            </a>
-
-                            <ul class="dropdown-menu header__contacts-city-list" aria-labelledby="header__contacts-city-list">
-                                <?php while ( have_rows( 'contacts-city-list', 'options' ) ) : the_row(); ?>
-
-                                        <li>
-                                            <a href="<?= get_sub_field('contacts-city-list-url') ?>">
-                                                <?= get_sub_field('contacts-city-list-title') ?>
-                                            </a>
-                                        </li>
-
-                                <?php endwhile; ?>
-                            </ul>
-
-                            <a href="tel:<?= phone_replace(do_shortcode('[contacts type="tel"]')) ?>" class="header__contacts-tel">
                                 <img
-                                        src="<?= get_template_directory_uri() . '/assets/' ?>css/images/icon-tel.svg"
-                                        alt=""
-                                        title=""
-                                        class="svg"
+                                        src="<?= $logo_white ?>"
+                                        alt="<?= get_bloginfo('name') ?>"
+                                        title="<?= get_bloginfo('name') ?>"
+                                        class="header__logo-white"
                                 >
-                                <span>
+                            </a>
+                            <!-- end logo -->
+
+                            <!-- nav -->
+                            <div class="header__nav">
+                                <?php
+                                /*
+                                 * Args Nav Menu
+                                 */
+                                $args = array(
+                                    'theme_location'    => 'header-menu',
+                                    'container'         => '',
+                                    'container_class'   => '',
+                                    'menu_class'        => '',
+                                    'items_wrap'        => '<ul class="header__nav-list">%3$s</ul>'
+                                );
+                                wp_nav_menu($args);
+                                ?>
+                            </div>
+                            <!-- end nav -->
+
+                            <?php if( have_rows( 'contacts-city-list', 'options' ) ) : ?>
+                                <!-- contacts -->
+                                <div class="header__contacts">
+                                    <?php
+                                    $city_list = get_field( 'contacts-city-list', 'options' );
+                                    $city_active = array_filter($city_list, function ($var) {
+                                        return ($var['contacts-city-list-cityactive'] == 1);
+                                    });
+                                    ?>
+                                    <!-- city -->
+                                    <div class="header__contacts-city">
+
+                                        <a
+                                                href="#location"
+                                                class="header__contacts-city-dropdown dropdown-toggle"
+                                                type="button"
+                                                id="header__contacts-city-list"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                        >
+                                            <span>г. <?= $city_active[0]['contacts-city-list-title'] ?></span>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu header__contacts-city-list" aria-labelledby="header__contacts-city-list">
+                                            <?php while ( have_rows( 'contacts-city-list', 'options' ) ) : the_row(); ?>
+
+                                                <li>
+                                                    <a href="<?= get_sub_field('contacts-city-list-url') ?>">
+                                                        <?= get_sub_field('contacts-city-list-title') ?>
+                                                    </a>
+                                                </li>
+
+                                            <?php endwhile; ?>
+                                        </ul>
+
+                                    </div>
+                                    <!-- end city -->
+
+                                    <!-- phone -->
+                                    <div class="header__contacts-phone">
+
+                                        <a href="<?= do_shortcode('[contacts type="whatsapp"]') ?>" class="header__contacts-phone-social" target="_blank">
+                                            <img
+                                                    src="<?= get_template_directory_uri() ?>/assets/css/images/icon_whatsapp.png"
+                                                    alt=""
+                                                    title=""
+                                            >
+                                        </a>
+
+                                        <!-- phone > right -->
+                                        <div class="header__contacts-phone-right">
+
+                                            <a href="tel:<?= phone_replace(do_shortcode('[contacts type="tel"]')) ?>" class="header__contacts-phone-tel">
+                                                <span>
                                     <?= do_shortcode('[contacts type="tel"]') ?>
                                 </span>
-                            </a>
+                                            </a>
+                                            <a href="mailto:<?= do_shortcode('[contacts type="email"]') ?>" class="header__contacts-phone-email">
+                                                <span><?= do_shortcode('[contacts type="email"]') ?></span>
+                                            </a>
+
+                                        </div>
+                                        <!-- end phone > right -->
+
+                                    </div>
+                                    <!-- end phone -->
+
+                                </div>
+                                <!-- end contacts -->
+                            <?php endif; ?>
+
                         </div>
-                        <!-- end contacts -->
-                        <?php endif; ?>
+
+                    </div>
+
+                    <!-- Bottom -->
+                    <div class="header__bottom">
+
+                        <!-- Row -->
+                        <div class="header__bottom-row">
+
+                            <!-- Menu -->
+                            <?php
+                            /*
+                             * Args Nav Menu
+                             */
+                            $args = array(
+                                'theme_location'    => 'header-menu-bottom',
+                                'container'         => '',
+                                'container_class'   => '',
+                                'menu_class'        => '',
+                                'items_wrap'        => '<ul class="header__menu">%3$s</ul>'
+                            );
+                            wp_nav_menu($args);
+                            ?>
+                            <!-- End Menu -->
+
+                            <!-- Search -->
+                            <div class="header__search">
+                                <?php echo get_search_form(); ?>
+                            </div>
+                            <!-- End Search -->
+
+                        </div>
+                        <!-- End Row -->
+
+                    </div>
+                    <!-- End Bottom -->
+
+
+
+
+
+
 
                         <!-- openMenu -->
                         <button type="button" class="openMenu">
@@ -154,8 +198,6 @@ function adem_header_TagHeaderInner() {
                         </button>
                         <!-- end openMenu -->
 
-                    </div>
-                    <!-- end right -->
 
                 </div>
                 <!-- end header -->
