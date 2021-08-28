@@ -1,6 +1,6 @@
 header
     z-index 5
-    padding padd-top 0 0 0
+    padding 0
 
     /.header
         flexs(center-vertical)
@@ -65,15 +65,12 @@ header
 
 
 
-
         &__nav
             flexs(justified)
             font-size 11px
             line-height @font-size
             text-transform uppercase
             font-weight 700
-            width 100%
-            max-width 380px
 
             > li
                 white-space nowrap
@@ -172,9 +169,6 @@ header
 
         @media screen and (max-width: media-large)
             opacity 1
-
-            &__nav
-                font-size 10px
 
             &__contacts
 
@@ -648,3 +642,211 @@ header
 
     .btn-opacity
         color color-brown
+
+
+.header {
+    &__top {
+        border-bottom: 1px solid background-grey;
+        flexs(center-vertical);
+        vendor(justify-content, space-between);
+        padding: 15px 0;
+
+        &-menu {
+            flexs();
+
+            > li {
+                white-space: nowrap;
+                @media screen and (max-width: media-large) {
+                    font-size: 13px;
+                }
+
+                &:not(:last-child) {
+                    margin: 0 15px 0 0;
+                    @media screen and (max-width: media-large) {
+                        margin: 0 8px 0 0;
+                    }
+                }
+                a {
+                    color: text-color;
+                    font-weight: 400;
+                    lnk(color-brown, hover);
+
+                    &:hover {
+                        color: color-brown;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__nav {
+        > li {
+            &.calculator {
+                > a {
+                    size = 34px;
+                    position: relative;
+                    min-height: size;
+                    flexs(center-vertical);
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: size;
+                        height: @width;
+                        background: url('images/icon_calc.svg') center center no-repeat;
+                        background-size: 100%;
+                        margin: 0 15px 0 0;
+                    }
+
+
+                    &:hover {
+                        border: none !important;
+                        background-size: 0% 0% !important;
+
+
+                    }
+
+                }
+            }
+        }
+    }
+    &__socials {
+        flexs(center-vertical);
+
+        > li {
+
+            &:not(:last-child) {
+                margin: 0 10px 0 0;
+            }
+            a {
+                size = 26px;
+                flexs(center-vertical);
+                width: size;
+                height: @width;
+                vendor(border-radius, 50%);
+                vendor(justify-content, center);
+                border: 2px solid rgb(188, 188, 188);
+                vendor(transition, border-color .55s linear);
+
+                svg, img {
+                    height: 10px;
+                }
+
+            }
+        }
+    }
+
+    &__information {
+
+        .email {
+            font-weight: 600;
+            lnk(color-brown, hover);
+        }
+    }
+
+    &__search {
+        size = 40px;
+        position: relative;
+        margin: 0 20px;
+
+        @media screen and (max-width: 1280px) {
+            max-width: 150px;
+        }
+
+        [type="text"] {
+            vendor(border-radius, 999px);
+            border: 2px solid background-grey;
+            background-color: background-grey;
+            font-size: 12px;
+            font-weight: 500;
+            color: text-color;
+            height: size;
+            position: relative;
+            z-index: 1;
+            padding: 0 size 0 20px;
+            vendor(transition, all .15s linear);
+            width: 100%;
+            max-width: 300px;
+
+            &:focus {
+                background-color: transparent;
+                border-color: color-brown;
+            }
+
+            &::placeholder {
+                opacity: 0.5;
+            }
+        }
+
+        [type="submit"] {
+            flexs(center-vertical);
+            vendor(justify-content, center);
+            position: absolute;
+            z-index: 2;
+            width: size;
+            height: size;
+            right: 0;
+            top: 0;
+            background: none;
+            border: none;
+            vendor(transition, color .15s linear);
+
+            &:hover {
+                color: color-brown;
+            }
+        }
+    }
+
+}
+
+.menucatalog__active {
+    .header {
+        &__top {
+            border-bottom-color: rgba(255,255,255,0.1);
+
+            &-menu {
+                > li {
+                    > a {
+                        color: text-color-grey;
+
+                        &:hover {
+                            color: color-brown;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__socials {
+            > li {
+                a {
+                    border-color: color-brown;
+                }
+            }
+        }
+        &__information {
+            .email {
+                color: color-brown;
+            }
+        }
+        &__search {
+            [type="text"] {
+                border-color: rgba(255,255,255,0.3);
+                background-color: transparent;
+                color: text-color-grey;
+
+                &::placeholder {
+                    color: text-color-grey;
+                }
+
+                &:focus {
+                    border-color: color-brown;
+                }
+            }
+            [type="submit"] {
+                color: color-brown;
+            }
+        }
+    }
+}

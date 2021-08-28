@@ -189,6 +189,15 @@ var AllPage = function () {
 		});
 		/** End Catalog **/
 
+        $(".openMenuCatalog").hover(
+            function () {
+                $('body').addClass('menucatalog__active');
+            },
+            function () {
+                
+            }
+        );
+
 		$(window).on('load resize', function () {
 
 		});
