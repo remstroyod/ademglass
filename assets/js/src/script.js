@@ -159,6 +159,8 @@ var AllPage = function () {
 
 	}
 	/** End Plugin **/
+	
+	
 
 	/** Navbar **/
 	var Navbar = function () {
