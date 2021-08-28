@@ -25,6 +25,57 @@ function adem_header_TagHeaderInner() {
         <div class="row">
             <!-- col -->
             <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+
+                <!-- top -->
+                <div class="header__top">
+
+                    <!-- menu -->
+                    <?php
+                    /*
+                     * Args Nav Menu
+                     */
+                    $args = array(
+                        'theme_location'    => 'header-menu-bottom',
+                        'container'         => '',
+                        'container_class'   => '',
+                        'menu_class'        => '',
+                        'items_wrap'        => '<ul class="header__top-menu">%3$s</ul>'
+                    );
+                    wp_nav_menu($args);
+                    ?>
+                    <!-- end menu -->
+
+                    <!-- information -->
+                    <div class="header__information">
+                        <a href="mailto:<?= do_shortcode('[contacts type="email"]') ?>" class="email">
+                            <?= do_shortcode('[contacts type="email"]') ?>
+                        </a>
+                    </div>
+                    <!-- end information -->
+
+                    <?php if( have_rows( 'contacts-socials', 'options' ) ): ?>
+                        <!-- social -->
+                        <ul class="header__socials">
+                            <?php while ( have_rows( 'contacts-socials', 'options' ) ) : the_row(); ?>
+                                <li>
+                                    <a href="<?= get_sub_field('contacts-socials-url') ?>" target="_blank">
+                                        <img
+                                                src="<?= get_sub_field('contacts-socials-icon') ?>"
+                                                alt="<?= get_sub_field('contacts-socials-title') ?>"
+                                                title="<?= get_sub_field('contacts-socials-title') ?>"
+                                                class="svg"
+                                        >
+                                    </a>
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
+                        <!-- end social -->
+                    <?php endif; ?>
+
+                </div>
+                <!-- end top -->
+
+
                 <!-- header -->
                 <div class="header">
 
@@ -91,6 +142,14 @@ function adem_header_TagHeaderInner() {
                             </a>
                         </div>
                         <!-- end btn -->
+
+                        <!-- search -->
+                        <div class="header__search">
+
+                            <?= get_search_form() ?>
+
+                        </div>
+                        <!-- end search -->
 
                         <?php if( have_rows( 'contacts-city-list', 'options' ) ) : ?>
                         <!-- contacts -->

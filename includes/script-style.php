@@ -14,22 +14,22 @@ function jquery_script_method() {
 	wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/src/jquery/jquery.js', false, '3.4.1', false );
 	wp_enqueue_script( 'jquery' );
 }
-/** 
+/**
  * CSS files
  */
 add_action( 'wp_enqueue_scripts', 'adem_styles' );
 function adem_styles() {
-    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.2' );
-    wp_enqueue_style( 'customize-adem', get_template_directory_uri() . '/assets/css/customize.css', array(), '1.0.1' );
+    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.3' );
+    wp_enqueue_style( 'customize-adem', get_template_directory_uri() . '/assets/css/customize.css', array(), '1.0.2' );
 }
 /**
  * JS files
  */
 add_action( 'wp_enqueue_scripts', 'adem_scripts' );
 function adem_scripts() {
-    wp_enqueue_script( 'bundle-adem', get_template_directory_uri() . '/assets/js/bundle.js', 'jquery', '1.0.1', true );
-    wp_enqueue_script( 'script-adem', get_template_directory_uri() . '/assets/js/src/script.js', 'jquery', '1.0.1', true );
-    wp_enqueue_script( 'form-adem', get_template_directory_uri() . '/assets/js/src/form.js', 'jquery', '1.0.1', true );
+    wp_enqueue_script( 'bundle-adem', get_template_directory_uri() . '/assets/js/bundle.js', 'jquery', '1.0.2', true );
+    wp_enqueue_script( 'script-adem', get_template_directory_uri() . '/assets/js/src/script.js', 'jquery', '1.0.2', true );
+    wp_enqueue_script( 'form-adem', get_template_directory_uri() . '/assets/js/src/form.js', 'jquery', '1.0.2', true );
 }
 
 /*
