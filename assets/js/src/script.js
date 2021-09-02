@@ -157,10 +157,15 @@ var AllPage = function () {
         });
         /** End Scroll To Box **/
 
+
+        $('input[type="file"]').change(function() {
+            $(this).parent().parent().parent().find('label.file').text( $(this).val() );
+        });
+
 	}
 	/** End Plugin **/
-	
-	
+
+
 
 	/** Navbar **/
 	var Navbar = function () {
@@ -194,7 +199,7 @@ var AllPage = function () {
                 $('body').addClass('menucatalog__active');
             },
             function () {
-                
+
             }
         );
 
@@ -657,10 +662,60 @@ var RezkaPage = function () {
 }();
 /** END REZKA ZERKAL PAGE **/
 
+/** SOLUTIONS PAGE **/
+var SolutionsPage = function () {
+
+    /** Slider **/
+    var Slider = function (options) {
+
+        /** Swiper Solutions **/
+        var settings_swiper_solutions = {
+                speed:					800,
+                slidesPerView: 			1,
+                spaceBetween: 			15,
+                watchOverflow: 			true,
+                watchSlidesVisibility: 	true,
+                simulateTouch: 			true,
+                centerInsufficientSlides:   true,
+                loop:                       true,
+                centeredSlides:             true,
+                navigation: {
+                    nextEl: 			'.solutions__intro-slider .swiper-button-next',
+                    prevEl: 			'.solutions__intro-slider .swiper-button-prev',
+                },
+                pagination: {
+                    el: 				'.solutions__intro-slider .swiper-pagination',
+                    type:               'fraction',
+                },
+                breakpoints: {
+                    600: {
+                        spaceBetween: 			    15,
+                        slidesPerView: 			3,
+
+                    },
+                }
+            },
+            swiper_solutions = new Swiper('.solutions__intro-slider .swiper-container', settings_swiper_solutions);
+        /** End Swiper Solutions **/
+
+    }
+    /** Slider **/
+
+    /*--Init--*/
+    return {
+        init: function () {
+            Slider();
+        }
+    };
+    /*--End Init--*/
+}();
+/** END SOLUTIONS PAGE **/
+
 jQuery(document).ready(function() {
 	AllPage.init();
 	HomePage.init();
     CatalogPage.init();
     DourCupePage.init();
     RezkaPage.init();
+    SolutionsPage.init();
 });

@@ -1,0 +1,96 @@
+.solutions {
+    &__intro {
+        $left-width = 550px;
+        $left-width-md = 400px;
+
+        flexs();
+        vendor(flex-wrap, wrap);
+        margin: 0 0 90px 0;
+
+        &-left {
+            width: $left-width;
+            @media screen and (max-width: media-md) {
+                width: $left-width-md;
+            }
+            @media screen and (max-width: media-sm) {
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+
+
+            img {
+                height: auto;
+                max-width: 100%;
+                display: block;
+                @media screen and (max-width: media-sm) {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-right {
+            width: 'calc(100% - %s)' % $left-width;
+            padding: 0 0 0 30px;
+            @media screen and (max-width: media-md) {
+                width: 'calc(100% - %s)' % $left-width-md;
+            }
+            @media screen and (max-width: media-sm) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        &-slider {
+            padding: 40px 0 0 0;
+
+            .swiper {
+                &-controls {
+                    position: relative;
+                    flexs(center-vertical);
+                    vendor(justify-content, center);
+                    margin: 20px 0 0 0;
+                }
+                &-button {
+                    position: relative;
+                    margin: 0;
+                    color: background-black;
+
+                    &:hover {
+                        background-color: background-brown;
+                        color: #fff;
+                    }
+                }
+                &-pagination {
+                    width: 150px;
+                    font-weight: 600;
+                }
+                &-container {
+                    background-color: background-grey;
+                    padding: 7px;
+                }
+                &-slide {
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                        vendor(transition, opacity 0.2s linear)
+                    }
+                    &:not(.swiper-slide-active) {
+                        img {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

@@ -103,23 +103,40 @@ button
     border-color-input = #bcbcbc
 
     label
-        font-weight 500
-        font-size font-size-form
-        line-height @font-size * 1.1
-        margin 0
-        vendor(transition, top 200ms)
-        position absolute
-        top 10px
-        left 0
-        opacity 0
-        z-index -1
-        color placeholder-form-color
 
-        &.floating
-            top 1px
-            z-index 1
-            opacity 1.0
-            color color-brown
+        &.file
+            margin 0
+            width 100%
+            height 60px
+            color placeholder-form-color
+            flexs(center-vertical)
+            font-weight 500
+            cursor pointer
+            border none
+            border-bottom 1px solid  border-color-input
+            font-size font-size-form
+            background transparent url('images/atach.png') 98% center no-repeat
+
+        &:not(.file)
+            font-weight 500
+            font-size font-size-form
+            line-height @font-size * 1.1
+            margin 0
+            vendor(transition, top 200ms)
+            position absolute
+            top 10px
+            left 0
+            opacity 0
+            z-index -1
+            color placeholder-form-color
+
+            &.floating
+
+                &:not(.file)
+                    top 1px
+                    z-index 1
+                    opacity 1.0
+                    color color-brown
 
     &-group
         margin-bottom 30px
@@ -280,5 +297,8 @@ button
                 line-height @width - 3
                 vendor(border-radius, 50%)
 
+
+    [type="file"]
+       display none
 
 /** END FORM CONTROL **/

@@ -1,0 +1,61 @@
+.solutions {
+    &__form {
+        background-color: background-grey;
+        padding: 60px 400px 60px 60px;
+        position: relative;
+        z-index: 2;
+        margin: 0 0 90px 0;
+        @media screen and (max-width: media-md) {
+            padding: 40px 300px 10px 40px;
+        }
+        @media screen and (max-width: media-sm) {
+            padding: 40px 40px 10px 40px;
+        }
+
+        &-title {
+            margin: 0 0 10px 0;
+        }
+
+        &-excerpt {
+            font-size: 16px;
+            line-height: 1.6;
+
+            * {
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        &-form {
+            margin: 40px 0 0 0;
+            position: relative;
+            z-index: 2;
+
+            small {
+                display: block;
+                font-size: 13px;
+                padding: 15px 0 0 0;
+                color: #a5a5a5;
+                font-weight: 500;
+
+                a {
+                    color: color-brown;
+                }
+            }
+        }
+
+        &-woman {
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            z-index: 1;
+            @media screen and (max-width: media-md) {
+                width: 400px;
+                right: -70px;
+            }
+            @media screen and (max-width: media-sm) {
+                display: none;
+            }
+        }
+    }
+}

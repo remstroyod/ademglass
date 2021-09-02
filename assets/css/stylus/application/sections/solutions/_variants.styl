@@ -1,0 +1,110 @@
+.solutions {
+    &__variants {
+
+        &-title {
+            margin: 0 0 60px 0;
+        }
+
+        &-list {
+            flexs();
+            vendor(flex-wrap, wrap);
+            position: relative;
+
+            > li {
+                flexs();
+                width: 50%;
+                padding: 0 15px;
+                margin-bottom: 30px;
+                @media screen and (max-width: media-sm) {
+                    width: 100%;
+                }
+            }
+
+            &-item {
+                $image-width = 230px;
+                $image-width-md = 175px;
+                $image-width-sm = 130px;
+
+                flexs(center-vertical);
+                border: 2px solid background-brown;
+                padding: 8px;
+                height: 250px;
+                width: 100%;
+                @media screen and (max-width: media-md) {
+                    height: 195px;
+                }
+                @media screen and (max-width: media-sm) {
+                    height: 150px;
+                }
+
+                &:hover {
+                    border: 2px solid background-black;
+
+                    p {
+                        color: color-brown;
+                    }
+                }
+
+                &-image {
+                    width: $image-width;
+                    @media screen and (max-width: media-md) {
+                        width: $image-width-md;
+                    }
+                    @media screen and (max-width: media-sm) {
+                        width: $image-width-sm;
+                    }
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        object-position: center;
+                    }
+
+                }
+
+                &-text {
+                    text-align: left;
+                    width: 'calc(100% - %s)' % $image-width;
+                    padding: 0 0 0 25px;
+                    font-weight: 500;
+                    @media screen and (max-width: media-md) {
+                        width: 'calc(100% - %s)' % $image-width-md;
+                    }
+                    @media screen and (max-width: media-sm) {
+                        padding: 0 0 0 15px;
+                        width: 'calc(100% - %s)' % $image-width-sm;
+                    }
+
+                    p {
+                        font-size: 22px;
+                        line-height: 1.4;
+                        color: #959494;
+                        display: block;
+                        padding: 0;
+                        margin: 0 0 15px 0;
+                        @media screen and (max-width: media-md) {
+                            font-size: 18px;
+                        }
+                        @media screen and (max-width: media-sm) {
+                            font-size: 16px;
+                        }
+                    }
+
+                    span {
+                        color: color-brown;
+                        font-size: 16px;
+                        @media screen and (max-width: media-sm) {
+                            font-size: 14px;
+                        }
+
+                        i {
+                            margin: 0 0 0 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

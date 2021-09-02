@@ -15,6 +15,11 @@ get_template_part( 'template-parts/partials/partial', 'pagehead' );
 $category           = get_the_category();
 if($category[0]->term_id === 128) :
     get_template_part('template-parts/pages/dourcupe/dourcupe', 'single');
+
+elseif ($category[0]->term_id === 141) :
+
+    get_template_part('template-parts/pages/solutions/solutions', 'single');
+
 else: ?>
 
     <!-- sidebar -->
