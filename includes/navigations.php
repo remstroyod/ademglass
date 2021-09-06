@@ -13,4 +13,5 @@ register_nav_menus( array(
     'footer-menu' 				    => esc_html__( 'Footer: Основное меню', 'adem' ),
     'sidebar-left-menu-one' 		=> esc_html__( 'Левый сайдбар: Основное меню', 'adem' ),
     'sidebar-left-menu-two' 		=> esc_html__( 'Левый сайдбар: Вспомогательное меню', 'adem' ),
+    'sidebar-left-menu-three' 		=> esc_html__( 'Левый сайдбар: Меню каталога', 'adem' ),
 ));
