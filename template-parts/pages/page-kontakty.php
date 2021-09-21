@@ -157,9 +157,19 @@ endif;
                                         <li>
                                             <!-- Tel -->
                                             <div class="contacts__contact-phone--tel">
-                                                <a href="tel:<?= phone_replace( get_sub_field('contacts-phone-list-tel') ) ?>">
+                                                
+                                                <a href="tel:<?= phone_replace( get_sub_field('contacts-phone-list-tel') ) ?>" class="tel">
                                                     <?= get_sub_field('contacts-phone-list-tel') ?>
                                                 </a>
+                                                
+                                                <?php if( ! empty( get_sub_field('contacts-phone-list-email') ) ) : ?>
+                                                <div class="email">
+                                                    <a href="mailto: <?= get_sub_field('contacts-phone-list-email') ?>">
+                                                        <?= get_sub_field('contacts-phone-list-email') ?>
+                                                    </a>
+                                                </div>
+                                                <?php endif; ?>
+                                                
                                             </div>
                                             <!-- End Tel -->
                                             <!-- Title -->

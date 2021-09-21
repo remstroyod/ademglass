@@ -13605,7 +13605,8 @@ header {
     display: none;
   }
 }
-.header__search [type="text"] {
+.header__search [type="text"],
+.header__search [type="search"] {
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   -ms-border-radius: 999px;
@@ -13626,11 +13627,13 @@ header {
   width: 100%;
   max-width: 300px;
 }
-.header__search [type="text"]:focus {
+.header__search [type="text"]:focus,
+.header__search [type="search"]:focus {
   background-color: transparent;
   border-color: #d78a6e;
 }
-.header__search [type="text"]::placeholder {
+.header__search [type="text"]::placeholder,
+.header__search [type="search"]::placeholder {
   opacity: 0.5;
 }
 .header__search [type="submit"] {
@@ -14306,10 +14309,39 @@ header {
 }
 .contacts__contact-phone--tel {
   width: 260px;
+}
+.contacts__contact-phone--tel .tel {
   font-weight: 700;
   font-size: 22px;
   line-height: 23px;
   color: #404040;
+}
+.contacts__contact-phone--tel .email {
+  padding: 4px 0 0 0;
+}
+.contacts__contact-phone--tel .email a {
+  font-weight: 600;
+  color: #d78a6e;
+  text-decoration: none;
+  font-size: 14px;
+  text-decoration: none;
+  outline: none !important;
+  background-image: -webkit-linear-gradient(bottom, transparent 0, #d78a6e 0, #d78a6e 1px, transparent 1px);
+  background-image: -o-linear-gradient(bottom, transparent 0, #d78a6e 0, #d78a6e 1px, transparent 1px);
+  background-image: linear-gradient(to top, transparent 0, #d78a6e 0, #d78a6e 1px, transparent 1px);
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  -webkit-transition: -webkit-background-size 0.3s, color 0.3s;
+  transition: -webkit-background-size 0.3s, color 0.3s;
+  -o-transition: background-size 0.3s, color 0.3s;
+  transition: background-size 0.3s, color 0.3s;
+  transition: background-size 0.3s, -webkit-background-size 0.3s, color 0.3s;
+}
+.contacts__contact-phone--tel .email a:hover {
+  -webkit-background-size: 0% 100%;
+  background-size: 0% 100%;
 }
 .contacts__contact-phone--title {
   display: -webkit-box;
