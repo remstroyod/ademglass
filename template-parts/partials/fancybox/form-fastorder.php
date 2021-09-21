@@ -10,7 +10,7 @@ global $product;
 
 ?>
 <!-- Popup -->
-<div class="popup" style="max-width: 800px">
+<div class="popup" style="max-width: 800px" data-url="<?= $args['page_url'] ?>">
     <!-- header -->
     <div class="popup__header">
         <h5 class="h3 popup__title">Быстрый заказ</h5>
@@ -19,7 +19,7 @@ global $product;
     <!-- end header -->
     <!-- content -->
     <div class="popup__content">
-        <?= do_shortcode('[contact-form-7 id="1014" title="Быстрый заказ" html_class="row"]') ?>
+        <?= do_shortcode('[contact-form-7 id="1014" title="Быстрый заказ" html_class="row" url_page="'.$args['url_page'].'"]') ?>
     </div>
     <!-- end content -->
     <!-- footer -->

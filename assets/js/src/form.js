@@ -3,6 +3,10 @@ jQuery(document).ready(function() {
      * Contact Form 7
      */
     /** Before Send **/
+    $(document).on('click', '.fancyFastOrder', function (event) {
+        $('.popup [name="page-url"]').val($('.popup').data('url'));
+    });
+
     $(document).on('submit', '.wpcf7-form', function (event) {
         var frm = $(this),
             btn = $(frm).find('[type="submit"]');
@@ -49,11 +53,13 @@ jQuery(document).ready(function() {
      * Single Product
      * Быстрый заказ
      */
+
     $(document).on('click', '.fancyFastOrder', function(e){
         e.preventDefault();
         var data = {
-                'action':               'adem_form_fancybox_fastorder',
-                'title' :               $(this).attr('data-title')
+                'action'        : 'adem_form_fancybox_fastorder',
+                'title'         : $(this).attr('data-title'),
+                'page_url'      : $(this).attr('data-url'),
             },
             $this = $(this);
         $this.block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });

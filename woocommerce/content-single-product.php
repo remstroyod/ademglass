@@ -101,7 +101,7 @@ if ( post_password_required() ) {
                             <!-- right -->
                             <div class="product__minirow-right">
 
-                                <a href="#fancyFastOrder" class="btn fancyFastOrder" data-title="<?= $product->get_title() ?>">
+                                <a href="#fancyFastOrder" class="btn fancyFastOrder" data-title="<?= $product->get_title() ?>" data-url="<?= get_the_permalink() ?>">
                                     <span>Рассчитать заказ</span>
                                 </a>
 
