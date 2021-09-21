@@ -214,8 +214,15 @@ var AllPage = function () {
 		        '<div class="mobilemenu">' +
                     '<div class="mobilemenu__row">' +
                         '<div class="mobilemenu__row-header"></div>' +
-                        '<div class="mobilemenu__row-content mobilemenu__nav slinky"></div>' +
-                        '<div class="mobilemenu__row-footer"></div>' +
+                        '<div class="mobilemenu__row-content">' +
+                        '<div class="mobilemenu__nav slinky"></div>' +
+                        '<div class="mobilemenu__nav_top"></div>' +
+                        '<div class="mobilemenu__search"></div>' +
+                        '</div>' +
+                        '<div class="mobilemenu__row-footer">' +
+                        '<div class="mobilemenu__row-footer-download"></div>' +
+                        '<div class="mobilemenu__row-footer-socials"></div>' +
+                        '</div>' +
                     '</div>' +
                 '</div>'
             );
@@ -240,11 +247,31 @@ var AllPage = function () {
             });
             /** End Slinky **/
 
+            /** Top Menu **/
+            $('.mobilemenu__nav_top').append(
+                $('.header__top-menu').clone()
+            );
+            /** End Top Menu **/
+
+            /** Search **/
+            $('.mobilemenu__search').append(
+                $('.header__search').clone()
+            );
+            /** End Search **/
+
+
+
             /** Download **/
-            $('.mobilemenu__row-footer').append(
+            $('.mobilemenu__row-footer-download').append(
                 $('.megamenu__download').clone()
             );
             /** End Download **/
+
+            /** Socials **/
+            $('.mobilemenu__row-footer-socials').append(
+                $('.header__socials').clone()
+            );
+            /** End Socials **/
 
             /** Btn Decisions **/
             $('.mobilemenu__row-header').append(

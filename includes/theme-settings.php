@@ -224,29 +224,29 @@ function adem_remove_admin_menu_links() {
     //echo '<pre>' . print_r( $GLOBALS['submenu'], TRUE) . '</pre>';
 
     if ( 'remstroy-od@yandex.ru' != $user->user_email ) {
-        remove_menu_page('cptui_main_menu');
-        remove_menu_page('edit.php?post_type=acf-options-page');
-        remove_menu_page('edit.php?post_type=acf-field-group');
-        remove_menu_page('edit.php?post_type=shop_order');
-
-        remove_menu_page('admin.php?page=wc-settings&tab=checkout&section=liqpay-webplus');
-
-        remove_menu_page('wc-admin&path=/analytics/revenue');
-        remove_menu_page('wpcf7');
-
-        remove_menu_page('options-general.php');
-        remove_menu_page('smush');
-        remove_menu_page('aiowpsec');
-        remove_menu_page('yith_plugin_panel');
-        remove_menu_page('plugins.php');
-        remove_menu_page('tinvwl');
-        remove_menu_page('wpfront-user-role-editor-all-roles');
-
-        remove_submenu_page('woocommerce', 'checkout_form_designer');
-        remove_submenu_page('woocommerce', 'wt-woocommerce-related-products');
-
-        remove_submenu_page('users.php', 'wpfront-user-role-editor-assign-roles');
-        remove_submenu_page('edit.php?post_type=product', 'wt-woocommerce-related-products');
+//        remove_menu_page('cptui_main_menu');
+//        remove_menu_page('edit.php?post_type=acf-options-page');
+//        remove_menu_page('edit.php?post_type=acf-field-group');
+//        remove_menu_page('edit.php?post_type=shop_order');
+//
+//        remove_menu_page('admin.php?page=wc-settings&tab=checkout&section=liqpay-webplus');
+//
+//        remove_menu_page('wc-admin&path=/analytics/revenue');
+//        remove_menu_page('wpcf7');
+//
+//        remove_menu_page('options-general.php');
+//        remove_menu_page('smush');
+//        remove_menu_page('aiowpsec');
+//        remove_menu_page('yith_plugin_panel');
+//        remove_menu_page('plugins.php');
+//        remove_menu_page('tinvwl');
+//        remove_menu_page('wpfront-user-role-editor-all-roles');
+//
+//        remove_submenu_page('woocommerce', 'checkout_form_designer');
+//        remove_submenu_page('woocommerce', 'wt-woocommerce-related-products');
+//
+//        remove_submenu_page('users.php', 'wpfront-user-role-editor-assign-roles');
+//        remove_submenu_page('edit.php?post_type=product', 'wt-woocommerce-related-products');
 
     }
 }

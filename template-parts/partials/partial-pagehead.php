@@ -22,9 +22,27 @@ endif;
                     <div class="headpage__row">
                         <!-- left -->
                         <div class="headpage__row-left">
-                            <!-- breadcrumb -->
-                            <?= get_template_part( 'template-parts/partials/partial', 'breadcrumbs' ) ?>
-                            <!-- end breadcrumb -->
+
+                            <?php if( is_search() ) : ?>
+
+                                <!-- breadcrumb -->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <a href="<?= home_url() ?>"><?= __( 'Главная', 'adem' ) ?></a>
+                                    </li>
+                                    <li>
+                                        <span class="last"><?= __( 'Поиск', 'adem' ) ?></span>
+                                    </li>
+                                </ul>
+                                <!-- end breadcrumb -->
+
+                            <?php else: ?>
+
+                                <!-- breadcrumb -->
+                                <?= get_template_part( 'template-parts/partials/partial', 'breadcrumbs' ) ?>
+                                <!-- end breadcrumb -->
+
+                            <?php endif; ?>
                         </div>
                         <!-- end left -->
 

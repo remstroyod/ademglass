@@ -83,51 +83,39 @@ if($posts) :
                             <!-- End Left -->
                             <!-- Right -->
                             <div class="decisions__modal-row--right">
+                                <h5 class="title"><?= _e( 'Стекло' ) ?></h5>
+
                                 <?php
-                                $variants = get_field( 'variants', get_the_ID() );
+                                $filters = get_field( 'decisions_filters', get_the_ID() );
+
+                                if( $filters ) :
+                                    $title = [
+                                        'color' => __( 'Цвет' ),
+                                        'image' => __( 'Тип рисунка' ),
+                                        'style' => __( 'Стиль' ),
+                                    ];
+                                    $filter_slug = [
+                                        'color' => 'color',
+                                        'image' => 'drawing',
+                                        'style' => 'style',
+                                    ];
+
+                                    foreach ( $filters as $key => $filter ) :
+                                        if( $filter ) :
+                                            echo '<h6 class="subtitle">' . $title[$key] . '</h6>';
+                                            echo '<ul class="list">';
+                                            foreach ($filter as $item) :
+                                                echo '<li>';
+                                                echo '<a href="' . home_url( '/katalog/filters/' . $filter_slug[$key] . '/' . $item->slug . '/' ) . '">' . $item->name . '</a>';
+                                                echo '</li>';
+                                            endforeach;
+                                            echo '</ul>';
+                                        endif;
+                                    endforeach;
+
+                                endif;
+
                                 ?>
-                                <h5 class="title"><?= $variants['title'] ?></h5>
-
-                                <?php if( $variants['list'] ) : ?>
-                                    <!-- variants -->
-                                    <div class="solutions__variants">
-
-                                        <!-- list -->
-                                        <ul class="row solutions__variants-list modal">
-
-                                            <?php foreach ( $variants['list'] as $item ) : ?>
-                                                <li>
-
-                                                    <!-- item -->
-                                                    <a href="<?= $item['link']['url'] ?>" class="solutions__variants-list-item">
-
-                                                        <!-- image -->
-                                                        <div class="solutions__variants-list-item-image">
-
-                                                            <?= kama_thumb_img( 'w=300 &h=300 &crop=top &attach_id=' . $item['image'] ) ?>
-
-                                                        </div>
-                                                        <!-- end image -->
-
-                                                        <!-- text -->
-                                                        <div class="solutions__variants-list-item-text">
-                                                            <p><?= $item['title'] ?></p>
-                                                            <span><?= __( 'Смотреть варианты', 'adem' ) ?> <i class="fa fa-angle-right"></i></span>
-                                                        </div>
-                                                        <!-- end text -->
-
-                                                    </a>
-                                                    <!-- end item -->
-
-                                                </li>
-                                            <?php endforeach; ?>
-
-                                        </ul>
-                                        <!-- end list -->
-
-                                    </div>
-                                    <!-- end variants -->
-                                <?php endif; ?>
 
                             </div>
                             <!-- End Right -->

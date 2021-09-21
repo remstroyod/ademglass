@@ -650,6 +650,9 @@ header
         flexs(center-vertical);
         vendor(justify-content, space-between);
         padding: 15px 0;
+        @media screen and (max-width: media-sm) {
+            display: none;
+        }
 
         &-menu {
             flexs();
@@ -745,6 +748,11 @@ header
         }
     }
 
+    &__btn {
+        @media screen and (max-width: media-sm) {
+            display: none;
+        }
+    }
     &__search {
         size = 40px;
         position: relative;
@@ -752,6 +760,9 @@ header
 
         @media screen and (max-width: 1280px) {
             max-width: 150px;
+        }
+        @media screen and (max-width: media-sm) {
+            display: none;
         }
 
         [type="text"] {
@@ -798,6 +809,22 @@ header
         }
     }
 
+    &__contacts {
+        @media screen and (max-width: media-sm) {
+            display: none;
+        }
+    }
+    &__left {
+        @media screen and (max-width: media-sm) {
+            width: auto;
+        }
+    }
+    &__right {
+        @media screen and (max-width: media-sm) {
+            margin-left: auto;
+            width: auto;
+        }
+    }
 }
 
 .menucatalog__active {
@@ -846,6 +873,62 @@ header
             }
             [type="submit"] {
                 color: color-brown;
+            }
+        }
+    }
+}
+
+.mobilemenu {
+    &__nav_top {
+        ul {
+            vendor(flex-direction, column);
+            > li {
+                font-weight: 600;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                &:not(:last-child) {
+                    margin: 0;
+                }
+                > a {
+                    padding: 17px 40px;
+                    flexs(center-vertical);
+                    color: rgb(215, 138, 110);
+                    font-weight: 600;
+                    @media screen and (max-width: 400px) {
+                        padding-left: 20px;
+                    }
+
+                    &:hover {
+                        border: none !important;
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+    &__search {
+        padding: 30px 40px 0 40px;
+        @media screen and (max-width: 400px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .header__search {
+            display: block;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+        }
+    }
+    &__row {
+        &-footer {
+            &-socials {
+                padding-top: 25px;
+                ul {
+                    > li {
+                        > a {
+                            border-color: rgb(215, 138, 110);
+                        }
+                    }
+                }
             }
         }
     }
