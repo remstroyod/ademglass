@@ -30,14 +30,14 @@ endif;
         <!-- End Left -->
 
         <!-- Right -->
-        <div class="sidebar__headpage-row--right">
-            <button type="button" class="openSidebarLeft">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <a href="#close" class="catalog__header-right-overlay openSidebarLeft"></a>
-        </div>
+<!--        <div class="sidebar__headpage-row--right">-->
+<!--            <button type="button" class="openSidebarLeft">-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--            </button>-->
+<!--            <a href="#close" class="catalog__header-right-overlay openSidebarLeft"></a>-->
+<!--        </div>-->
         <!-- End Right -->
 
     </div>

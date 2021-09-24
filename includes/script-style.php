@@ -27,8 +27,8 @@ function adem_styles() {
  */
 add_action( 'wp_enqueue_scripts', 'adem_scripts' );
 function adem_scripts() {
-    wp_enqueue_script( 'bundle-adem', get_template_directory_uri() . '/assets/js/bundle.js', 'jquery', '1.0.3', true );
-    wp_enqueue_script( 'script-adem', get_template_directory_uri() . '/assets/js/src/script.js', 'jquery', '1.0.2', true );
+    wp_enqueue_script( 'bundle-adem', get_template_directory_uri() . '/assets/js/bundle.js', 'jquery', '1.0.4', true );
+    wp_enqueue_script( 'script-adem', get_template_directory_uri() . '/assets/js/src/script.js', 'jquery', '1.0.3', true );
     wp_enqueue_script( 'form-adem', get_template_directory_uri() . '/assets/js/src/form.js', 'jquery', '1.0.2', true );
 }
 

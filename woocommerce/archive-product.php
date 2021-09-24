@@ -75,15 +75,15 @@ do_action( 'woocommerce_before_main_content' );
             <?php endif; ?>
 
             <!-- button -->
-            <button type="button" class="catalog__header-right-button openSidebarLeft">
-                <img
-                        src="<?= get_template_directory_uri() ?>/assets/css/images/icon-filter.svg"
-                        alt=""
-                        title=""
-                        class="svg"
-                >
-            </button>
-            <a href="#close" class="catalog__header-right-overlay openSidebarLeft"></a>
+<!--            <button type="button" class="catalog__header-right-button openSidebarLeft">-->
+<!--                <img-->
+<!--                        src="--><?//= get_template_directory_uri() ?><!--/assets/css/images/icon-filter.svg"-->
+<!--                        alt=""-->
+<!--                        title=""-->
+<!--                        class="svg"-->
+<!--                >-->
+<!--            </button>-->
+<!--            <a href="#close" class="catalog__header-right-overlay openSidebarLeft"></a>-->
             <!-- end button -->
 
         </div>
@@ -209,6 +209,8 @@ if( $categories ) :
 
 
 <?php
+
+if( ! $categories ) :
 if ( woocommerce_product_loop() ) {
 
 	/**
@@ -251,7 +253,7 @@ if ( woocommerce_product_loop() ) {
 	 */
 	do_action( 'woocommerce_no_products_found' );
 }
-
+endif;
 /**
  * Hook: woocommerce_after_main_content.
  *

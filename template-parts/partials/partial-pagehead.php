@@ -45,52 +45,7 @@ endif;
                             <?php endif; ?>
                         </div>
                         <!-- end left -->
-
-                        <?php if(is_product_category()) : ?>
-                        <?php
-                            $this_category = get_queried_object();
-                            $args = array(
-                                'taxonomy'      => 'product_cat',
-                                'orderby'       => 'name',
-                                'hierarchical'  => 1,
-                                'hide_empty'    => false,
-                                'parent'        => 0
-                            );
-                            $all_categories = get_categories( $args );
-                            if($all_categories && $this_category->parent == 0) : ?>
-                                <!-- right -->
-                                <div class="headpage__row-right">
-
-                                    <!-- catalogmenu -->
-                                    <div class="catalogmenu-swiper">
-                                        <!-- carousel -->
-                                        <div class="carousel swiper-container">
-                                            <!-- wrapper -->
-                                            <div class="swiper-wrapper">
-
-                                                <?php foreach ($all_categories as $cat) : ?>
-                                                    <?php if(!empty(get_field('category-shortname', 'category_'.$cat->term_id))) : ?>
-                                                        <!-- slide -->
-                                                        <a href="<?= get_category_link($cat->term_id) ?>" class="swiper-slide catalogmenu-swiper-link">
-                                                            <?= get_field('category-shortname', 'category_'.$cat->term_id) ?>
-                                                        </a>
-                                                        <!-- end slide -->
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-
-                                            </div>
-                                            <!-- end wrapper -->
-                                        </div>
-                                        <!-- end carousel -->
-
-                                    </div>
-                                    <!-- end catalogmenu -->
-
-                                </div>
-                                <!-- end right -->
-                            <?php endif; ?>
-                        <?php endif; ?>
-
+                        
                     </div>
                     <!-- end row -->
 

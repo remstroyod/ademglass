@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
      */
     /** Before Send **/
     $(document).on('click', '.fancyFastOrder', function (event) {
-        $('.popup [name="page-url"]').val($('.popup').data('url'));
+
     });
 
     $(document).on('submit', '.wpcf7-form', function (event) {
@@ -13,7 +13,9 @@ jQuery(document).ready(function() {
         $(btn).find('span').addClass('hidden');
         $(btn).append('<span class="loaded">Минутку <b class="btn__loading"><i>.</i><i>.</i><i>.</i></b></span>');
         $(frm).find('input,button,select,textarea,checkbox').addClass('disabled');
+        $('.popup [name="page-url"]').val($('.popup').data('url'));
         //return false;
+        
     });
     /** After Send **/
     document.addEventListener('wpcf7submit', function (event) {
