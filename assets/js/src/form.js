@@ -17,6 +17,7 @@ jQuery(document).ready(function() {
         //return false;
         
     });
+    
     /** After Send **/
     document.addEventListener('wpcf7submit', function (event) {
         var $submit = $('#' + event.detail.id).find('[type="submit"]'),
@@ -26,6 +27,7 @@ jQuery(document).ready(function() {
         $submit.removeClass('disabled');
         $form.find('input,button,select,textarea')
             .removeClass('disabled');
+        $('.popup [name="page-url"]').val($('.popup').data('url'));
     });
     /** Success Send **/
     document.addEventListener('wpcf7mailsent', function (event) {
@@ -82,6 +84,7 @@ jQuery(document).ready(function() {
                             }
                         });
                         floatingLabel.init();
+                        $('.popup [name="page-url"]').val($('.popup').data('url'));
                     }
                 }
             });
