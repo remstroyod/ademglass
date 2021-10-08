@@ -127,6 +127,7 @@ function adem_footer_TagFooterInner() {
 
                             <!-- contacts -->
                             <div class="footer__row-contacts">
+
                                 <!-- top -->
                                 <ul class="footer__row-contacts-top">
                                     <li>
@@ -184,6 +185,58 @@ function adem_footer_TagFooterInner() {
                                     </div>
                                 </div>
                                 <!-- end center -->
+
+                                <!-- Title -->
+                                <h6 class="footer__row-title"><?= __( 'Стеклянные перегородки и двери', 'adem' ) ?></h6>
+                                <!-- End Title -->
+
+                                <!-- top -->
+                                <ul class="footer__row-contacts-top">
+                                    <li>
+                                        <!-- icon -->
+                                        <div>
+                                            <img
+                                                    src="<?= get_template_directory_uri() ?>/assets/css/images/icon-location.svg"
+                                                    alt=""
+                                                    title=""
+                                                    class="svg"
+                                            >
+                                        </div>
+                                        <!-- end icon -->
+                                        <p><?= do_shortcode('[contacts type="doors-address"]') ?></p>
+                                    </li>
+                                    <li>
+                                        <!-- icon -->
+                                        <div>
+                                            <img
+                                                    src="<?= get_template_directory_uri() ?>/assets/css/images/icon-time.svg"
+                                                    alt=""
+                                                    title=""
+                                                    class="svg"
+                                            >
+                                        </div>
+                                        <!-- end icon -->
+                                        <p><?= do_shortcode('[contacts type="doors-time"]') ?></p>
+                                    </li>
+                                </ul>
+                                <!-- end top -->
+                                <!-- center -->
+                                <div class="footer__row-contacts-center">
+                                    <div>
+                                        <a href="tel:<?= phone_replace(do_shortcode('[contacts type="doors-tel"]')) ?>" class="tel">
+                                            <?= do_shortcode('[contacts type="doors-tel"]') ?>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="mailto:<?= do_shortcode('[contacts type="doors-email"]') ?>" class="email">
+                                            <?= do_shortcode('[contacts type="doors-email"]') ?>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end center -->
+
+
+
 
                                 <?php if( have_rows( 'contacts-socials', 'options' ) ): ?>
                                     <!-- social -->
