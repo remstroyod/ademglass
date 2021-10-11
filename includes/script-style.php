@@ -19,7 +19,7 @@ function jquery_script_method() {
  */
 add_action( 'wp_enqueue_scripts', 'adem_styles' );
 function adem_styles() {
-    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.4' );
+    wp_enqueue_style( 'style-adem', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.5' );
     wp_enqueue_style( 'customize-adem', get_template_directory_uri() . '/assets/css/customize.css', array(), '1.0.3' );
 }
 /**

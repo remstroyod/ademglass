@@ -14242,6 +14242,18 @@ header {
 .contacts__contact {
   margin: 0 0 80px 0;
 }
+.contacts__contact.first {
+  margin: 0 0 50px 0;
+}
+.contacts__contact.last .contacts__contact-title {
+  margin: 0 0 30px 0;
+}
+.contacts__contact.last .contacts__contact-title span {
+  padding: 0;
+}
+.contacts__contact.last .contacts__contact-info {
+  padding: 0;
+}
 .contacts__contact-title {
   margin: 0 0 70px 0;
 }

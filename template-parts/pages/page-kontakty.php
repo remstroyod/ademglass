@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Page: Contacts
  */
@@ -47,7 +47,7 @@ endif;
                         <div class="contacts">
 
                             <!-- Contact -->
-                            <div class="contacts__contact row">
+                            <div class="contacts__contact row first">
 
                                 <!-- col -->
                                 <div class="col-xs-24 col-sm-10 col-md-10 col-lg-10">
@@ -157,11 +157,11 @@ endif;
                                         <li>
                                             <!-- Tel -->
                                             <div class="contacts__contact-phone--tel">
-                                                
+
                                                 <a href="tel:<?= phone_replace( get_sub_field('contacts-phone-list-tel') ) ?>" class="tel">
                                                     <?= get_sub_field('contacts-phone-list-tel') ?>
                                                 </a>
-                                                
+
                                                 <?php if( ! empty( get_sub_field('contacts-phone-list-email') ) ) : ?>
                                                 <div class="email">
                                                     <a href="mailto: <?= get_sub_field('contacts-phone-list-email') ?>">
@@ -169,7 +169,7 @@ endif;
                                                     </a>
                                                 </div>
                                                 <?php endif; ?>
-                                                
+
                                             </div>
                                             <!-- End Tel -->
                                             <!-- Title -->
@@ -183,6 +183,105 @@ endif;
                                     <!-- End Phone -->
                                     <?php endif; ?>
 
+                                </div>
+                                <!-- end col -->
+
+                            </div>
+                            <!-- End Contact -->
+
+                            <!-- Contact -->
+                            <div class="contacts__contact row last">
+
+                                <!-- col -->
+                                <div class="col-xs-24">
+                                    <!-- Title -->
+                                    <div class="contacts__contact-title">
+                                        <span class="h6">
+                                            <?= _e( 'Стеклянные перегородки и двери', 'adem' ) ?>
+                                        </span>
+                                    </div>
+                                    <!-- End Title -->
+                                </div>
+                                <!-- end col -->
+
+                                <!-- col -->
+                                <div class="col-xs-24 col-sm-10 col-md-10 col-lg-10">
+
+                                    <!-- Info -->
+                                    <ul class="contacts__contact-info">
+                                        <li>
+                                            <!-- icon -->
+                                            <div class="contacts__contact-info--icon">
+                                                <img
+                                                        src="<?= get_template_directory_uri() ?>/assets/css/images/icon-location.svg"
+                                                        alt=""
+                                                        title=""
+                                                        class="svg"
+                                                >
+                                            </div>
+                                            <!-- end icon -->
+                                            <p><?= do_shortcode('[contacts type="doors-address"]') ?></p>
+                                        </li>
+                                        <li>
+                                            <!-- icon -->
+                                            <div class="contacts__contact-info--icon">
+                                                <img
+                                                        src="<?= get_template_directory_uri() ?>/assets/css/images/icon-envelope.svg"
+                                                        alt=""
+                                                        title=""
+                                                        class="svg envelope"
+                                                >
+                                            </div>
+                                            <!-- end icon -->
+                                            <a href="mailto:<?= do_shortcode('[contacts type="doors-email"]') ?>" class="email">
+                                                <?= do_shortcode('[contacts type="doors-email"]') ?>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <!-- icon -->
+                                            <div class="contacts__contact-info--icon">
+                                                <img
+                                                        src="<?= get_template_directory_uri() ?>/assets/css/images/icon-hourglass.svg"
+                                                        alt=""
+                                                        title=""
+                                                        class="svg"
+                                                >
+                                            </div>
+                                            <!-- end icon -->
+                                            <p><?= do_shortcode('[contacts type="doors-time"]') ?></p>
+                                        </li>
+                                    </ul>
+                                    <!-- End Info -->
+
+                                </div>
+                                <!-- end col -->
+
+                                <!-- col -->
+                                <div class="col-xs-24 col-sm-14 col-md-14 col-lg-14">
+
+                                    <!-- Phone -->
+                                    <ul class="contacts__contact-phone">
+
+                                        <li>
+                                            <!-- Tel -->
+                                            <div class="contacts__contact-phone--tel">
+
+                                                <a href="tel:<?= phone_replace(do_shortcode('[contacts type="doors-tel"]')) ?>" class="tel">
+                                                    <?= do_shortcode('[contacts type="doors-tel"]') ?>
+                                                </a>
+
+                                            </div>
+                                            <!-- End Tel -->
+                                            <!-- Title -->
+                                            <div class="contacts__contact-phone--title">
+                                                <span><?= __( 'Стеклянные перегородки и двери', 'adem' ) ?></span>
+                                            </div>
+                                            <!-- End Title -->
+                                        </li>
+
+                                    </ul>
+                                    <!-- End Phone -->
+                                    
                                 </div>
                                 <!-- end col -->
 

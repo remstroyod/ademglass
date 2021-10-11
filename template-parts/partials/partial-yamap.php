@@ -57,16 +57,29 @@ $coords_doors = json_decode(get_field('contacts-doors-map', 'options'));
                     zoom: 11
                 }),
                 myPlacemarkContacts = new ymaps.Placemark([ <?= $coords->center_lat ?>,<?= $coords->center_lng ?> ], {
-                    iconContent: "",
-                    balloonContent: "",
-                    hintContent: ""
+                    hintContent: 'Основной офис',
+                    balloonContent: 'Основной офис',
+                    iconCaption: '',
                 }, {
                     iconLayout: "default#image",
                     iconImageHref: "<?= get_template_directory_uri() ?>/assets/css/images/map-marker-contacts.png",
                     iconImageSize: [63, 76],
-                    iconImageOffset: [0, 0]
+                    iconImageOffset: [-32, -76]
+                }),
+                myPlacemarkContactsDoors = new ymaps.Placemark([ <?= $coords_doors->center_lat ?>,<?= $coords_doors->center_lng ?> ], {
+                    hintContent: 'Стеклянные перегородки и двери',
+                    balloonContent: 'Стеклянные перегородки и двери',
+                    iconCaption: '',
+                }, {
+                    iconLayout: "default#image",
+                    iconImageHref: "<?= get_template_directory_uri() ?>/assets/css/images/map-marker-contacts.png",
+                    iconImageSize: [63, 76],
+                    iconImageOffset: [-32, -76]
                 });
             myMapContacts.geoObjects.add(myPlacemarkContacts);
+            myMapContacts.geoObjects.add(myPlacemarkContactsDoors);
+
+            myMapContacts.setBounds(myMapContacts.geoObjects.getBounds(),{checkZoomRange:true, zoomMargin:9});
         }
 
     };
