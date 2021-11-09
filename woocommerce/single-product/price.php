@@ -29,7 +29,7 @@ global $product;
 
         <!-- price -->
         <div class="product__row-price">
-            <small>Базовая стоимость</small>
+            <small>Базовая стоимость, за м2</small>
             <div>
                 <?php if($product->get_regular_price()) : ?>
                 <span><?= (number_format($product->get_regular_price(), 0, '.', ' ')) ?></span>

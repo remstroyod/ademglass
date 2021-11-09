@@ -2,9 +2,7 @@
 /*
  * Page Head
  */
-if ( ! defined('ABSPATH')) :
-    exit();
-endif;
+defined( 'ABSPATH' ) || exit;
 /*
  *
  */
@@ -45,7 +43,7 @@ endif;
                             <?php endif; ?>
                         </div>
                         <!-- end left -->
-                        
+
                     </div>
                     <!-- end row -->
 

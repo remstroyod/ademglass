@@ -46,3 +46,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 require get_template_directory() . '/includes/_zap.php';
+require get_template_directory() . '/includes/_calc.php';
