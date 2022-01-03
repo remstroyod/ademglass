@@ -136,6 +136,29 @@
                 display: flex;
                 padding: 0 15px;
                 margin: 0 0 30px 0;
+
+                > a {
+                    position: relative;
+
+                    &.active_product {
+                        &::after {
+                            size = 3px;
+                            offset = -10px;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            border: size solid background-brown;
+                            left: offset;
+                            top: offset;
+                            bottom: offset;
+                            right: offset;
+                            background: #fff;
+                            border-radius: 4px;
+                            z-index: -1;
+                        }
+                    }
+                }
+
             }
 
             .catalog__list {

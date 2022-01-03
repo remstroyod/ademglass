@@ -17405,6 +17405,22 @@ header {
   padding: 0 15px;
   margin: 0 0 30px 0;
 }
+.calc__step-products > li > a {
+  position: relative;
+}
+.calc__step-products > li > a.active_product::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 3px solid #d78a6e;
+  left: -10px;
+  top: -10px;
+  bottom: -10px;
+  right: -10px;
+  background: #fff;
+  border-radius: 4px;
+  z-index: -1;
+}
 .calc__step-products .catalog__list-card-title {
   height: auto;
 }
