@@ -187,7 +187,7 @@ function adem_footer_TagFooterInner() {
                                 <!-- end center -->
 
                                 <!-- Title -->
-                                <h6 class="footer__row-title"><?= __( 'Стеклянные перегородки и двери', 'adem' ) ?></h6>
+                                <h6 class="footer__row-title"><?= __( 'Стеклянные перегородки и двери ARTELLE', 'adem' ) ?></h6>
                                 <!-- End Title -->
 
                                 <!-- top -->
@@ -242,16 +242,18 @@ function adem_footer_TagFooterInner() {
                                     <!-- social -->
                                     <ul class="footer__row-contacts-social">
                                         <?php while ( have_rows( 'contacts-socials', 'options' ) ) : the_row(); ?>
-                                            <li>
-                                                <a href="<?= get_sub_field('contacts-socials-url') ?>" target="_blank">
-                                                    <img
-                                                            src="<?= get_sub_field('contacts-socials-icon') ?>"
-                                                            alt="<?= get_sub_field('contacts-socials-title') ?>"
-                                                            title="<?= get_sub_field('contacts-socials-title') ?>"
-                                                            class="svg"
-                                                    >
-                                                </a>
-                                            </li>
+                                            <?php if( get_sub_field('contacts-socials-footer') ) : ?>
+                                                <li>
+                                                    <a href="<?= get_sub_field('contacts-socials-url') ?>" target="_blank">
+                                                        <img
+                                                                src="<?= get_sub_field('contacts-socials-icon') ?>"
+                                                                alt="<?= get_sub_field('contacts-socials-title') ?>"
+                                                                title="<?= get_sub_field('contacts-socials-title') ?>"
+                                                                class="svg"
+                                                        >
+                                                    </a>
+                                                </li>
+                                            <?php endif; ?>
                                         <?php endwhile; ?>
                                     </ul>
                                     <!-- end social -->

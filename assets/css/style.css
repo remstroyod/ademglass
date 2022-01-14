@@ -12581,8 +12581,8 @@ footer {
 .footer__row-contacts-social > li > a,
 .contacts__social > li > a {
   display: block;
-  width: 34px;
-  height: 34px;
+  width: 56px;
+  height: 56px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -12608,7 +12608,7 @@ footer {
 }
 .footer__row-contacts-social .svg,
 .contacts__social .svg {
-  height: 14px;
+  height: 28px;
 }
 .footer__row-footer {
   display: -webkit-box;
@@ -13451,7 +13451,7 @@ header {
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 8px 0;
 }
 @media screen and (max-width: 999px) {
   .header__top {
@@ -13552,8 +13552,8 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -13570,7 +13570,7 @@ header {
 }
 .header__socials > li a svg,
 .header__socials > li a img {
-  height: 10px;
+  height: 18px;
 }
 .header__information .email {
   font-weight: 600;

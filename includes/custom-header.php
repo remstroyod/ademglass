@@ -57,16 +57,18 @@ function adem_header_TagHeaderInner() {
                         <!-- social -->
                         <ul class="header__socials">
                             <?php while ( have_rows( 'contacts-socials', 'options' ) ) : the_row(); ?>
-                                <li>
-                                    <a href="<?= get_sub_field('contacts-socials-url') ?>" target="_blank">
-                                        <img
-                                                src="<?= get_sub_field('contacts-socials-icon') ?>"
-                                                alt="<?= get_sub_field('contacts-socials-title') ?>"
-                                                title="<?= get_sub_field('contacts-socials-title') ?>"
-                                                class="svg"
-                                        >
-                                    </a>
-                                </li>
+                                <?php if( get_sub_field('contacts-socials-header') ) : ?>
+                                    <li>
+                                        <a href="<?= get_sub_field('contacts-socials-url') ?>" target="_blank">
+                                            <img
+                                                    src="<?= get_sub_field('contacts-socials-icon') ?>"
+                                                    alt="<?= get_sub_field('contacts-socials-title') ?>"
+                                                    title="<?= get_sub_field('contacts-socials-title') ?>"
+                                                    class="svg"
+                                            >
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             <?php endwhile; ?>
                         </ul>
                         <!-- end social -->
