@@ -106,7 +106,16 @@ get_header();
                 data-price="0"
                 id="calc_size_izdelie"
         >
-
+        <input
+                class=""
+                type="hidden"
+                name="url"
+                value=""
+                required=""
+                placeholder="URL"
+                data-price="0"
+                id="calc_size_url"
+        >
         <!-- container -->
         <div class="container-fluid">
 
@@ -205,6 +214,7 @@ get_header();
                                                 <a
                                                         href="<?= get_permalink( $_product->get_id() ); ?>"
                                                         class="catalog__list-card calcProduct"
+                                                        data-name="<?= $_product->get_title() ?>"
                                                         data-price="<?= get_post_meta( $_product->get_id(), '_calc_price', true ) ?>"
                                                         data-diametr-1="<?= get_post_meta( $_product->get_id(), '_calc_price_5_12', true ) ?>"
                                                         data-diametr-2="<?= get_post_meta( $_product->get_id(), '_calc_price_13_30', true ) ?>"
@@ -681,7 +691,8 @@ get_footer();
 
         $(document).on('click', '.form_calc_button', function(e) {
 
-
+            $('#form_calc_url').val( $('#calc_size_url').val() );
+            $('#form_calc_izdelie').val( $('#calc_size_izdelie').val() );
             $('#form_calc_size_izdelie').val( $('#calc_size_izdelie').val() );
             $('#form_calc_size_start').val( $('#calc_size_start').val() );
             $('#form_calc_size_end').val( $('#calc_size_end').val() );
@@ -703,7 +714,7 @@ get_footer();
 
             let $this = $(this),
                 price = $this.data('price'),
-                name = $this.find('h3').text(),
+                name = $this.data('name'),
                 diametr_1 = $this.data('diametr-1'),
                 diametr_2 = $this.data('diametr-2'),
                 diametr_3 = $this.data('diametr-3');
@@ -711,6 +722,7 @@ get_footer();
             $('#calc_size_izdelie').val(name);
             $('#calc_size_izdelie').attr('data-price', price);
             $('#calc_size_izdelie_price').val(price);
+            $('#calc_size_url').val($this.attr('href'));
 
             $('#calc_size_diametr_otverstia').html(
                 '<option value="0">Выберите диаметр</option>' +
